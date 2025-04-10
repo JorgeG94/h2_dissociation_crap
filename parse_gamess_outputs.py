@@ -18,7 +18,7 @@ energy_patterns = {
 ordered_methods = [
     "fci",
     "ccsdt",
-    "b3lyp",
+    "b3lypv5",
     "pbe0",
     "m06-2x",
     "b2-plyp",
