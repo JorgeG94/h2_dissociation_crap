@@ -1,0 +1,1922 @@
+source /home/jorge/dev/gamess/install.info
+setenv GMS_VERSION 00
+setenv GMS_PATH /home/jorge/dev/gamess
+setenv GMS_BUILD_DIR /home/jorge/dev/gamess
+setenv GMS_TARGET linux64
+setenv GMS_ARCH x86_64
+setenv GMS_HPC_SYSTEM_TARGET generic
+setenv GMS_FORTRAN ifx
+setenv GMS_ifx_VERNO
+setenv GMS_DDI_COMM mpi
+setenv GMS_MPI_LIB impi
+setenv GMS_MPI_PATH /home/jorge/install/intel-hpc/mpi/2021.14
+setenv GMS_MATHLIB mkl
+setenv GMS_MATHLIB_PATH /home/jorge/install/intel-hpc/mkl/2025.0/lib
+setenv GMS_THREADED_BLAS false
+setenv GMS_LAPACK_LINK_LINE 
+if ( mkl == mkl ) then
+setenv GMS_MKL_VERNO
+endif
+setenv GMS_OPENMP false
+setenv GMS_OPENMP_OFFLOAD false
+setenv GMS_USE_HIPFORT false
+setenv USE_CUBLAS false
+setenv USE_HIPBLAS false
+setenv GMS_GMSHPC false
+setenv GMS_GMSHPC_PATH
+setenv GMS_GMSHPC_USE_DATA_SERVERS true
+setenv GMS_PHI none
+setenv GMS_SHMTYPE sysv
+setenv GMS_MSUAUTO false
+setenv GMS_LIBXC true
+setenv GMS_MDI false
+setenv GMS_VM2 false
+setenv TINKER false
+setenv VB2000 false
+setenv XMVB false
+setenv NEO false
+setenv NBO false
+setenv RISM false
+if ( ! 0 ) setenv OMP_NUM_THREADS 4
+setenv OMP_NUM_THREADS 4
+if ( ! 0 ) setenv OMP_STACKSIZE 1G
+setenv OMP_STACKSIZE 1G
+setenv GMS_FPE_FLAGS -fpe0
+unset echo
+No scheduler so we must be running locally on Big-Chungus
+Input file supplied : dft_pbe0_inputs/h2_r_1.95.inp
+----- GAMESS execution script 'rungms-dev' -----
+This job is running on host Big-Chungus
+under operating system Linux at Thu Apr 10 04:40:37 PM CDT 2025 with mpi communication mode
+Available scratch disk space (Kbyte units) at beginning of the job is
+Filesystem      1K-blocks       Used Available Use% Mounted on
+/dev/sda2      1844319788 1641955168 108604520  94% /
+GAMESS temporary binary files will be written to /home/jorge/dev/gamess/scratch
+GAMESS supplementary output files will be written to /home/jorge/restart
+limit stacksize 32768
+unset echo
+removed '/home/jorge/dev/gamess/scratch/h2_r_1.95.nodes.mpd'
+Copying input file h2_r_1.95.inp to your run's scratch directory...
+cp dft_pbe0_inputs/h2_r_1.95.inp /home/jorge/dev/gamess/scratch/h2_r_1.95.F05
+setenv NO_STOP_MESSAGE 1
+setenv AUXDATA /home/jorge/dev/gamess/auxdata
+setenv EXTBAS /home/jorge/dev/gamess/auxdata/DEF2/dsvp
+setenv NUCBAS /home/jorge/dev/gamess/h2_r_1.95.nucbas
+setenv EXTCAB /home/jorge/dev/gamess/auxdata/AUXBAS/auxdef21
+setenv POSBAS /home/jorge/dev/gamess/h2_r_1.95.posbas
+setenv DFTBPAR /home/jorge/dev/gamess/auxdata/DFTB
+setenv ERICFMT /home/jorge/dev/gamess/auxdata/ericfmt.dat
+setenv MCPPATH /home/jorge/dev/gamess/auxdata/MCP
+setenv BASPATH /home/jorge/dev/gamess/auxdata/BASES
+setenv QUANPOL /home/jorge/dev/gamess/auxdata/QUANPOL
+setenv MAKEFP /home/jorge/restart/h2_r_1.95.efp
+setenv GAMMA /home/jorge/restart/h2_r_1.95.gamma
+setenv TRAJECT /home/jorge/restart/h2_r_1.95.trj
+setenv RESTART /home/jorge/restart/h2_r_1.95.rst
+setenv QMWAVE /home/jorge/restart/h2_r_1.95.qmw
+setenv MDDIP /home/jorge/restart/h2_r_1.95.dip
+setenv OPTHES1 /home/jorge/restart/h2_r_1.95.hs1
+setenv OPTHES2 /home/jorge/restart/h2_r_1.95.hs2
+setenv FCIDUMP /home/jorge/restart/h2_r_1.95.FCIDUMP
+setenv XYZ /home/jorge/dev/gamess/scratch/h2_r_1.95.xyz
+setenv IRCDATA /home/jorge/dev/gamess/scratch/h2_r_1.95.F04
+setenv INPUT /home/jorge/dev/gamess/scratch/h2_r_1.95.F05
+setenv PUNCH /home/jorge/restart/h2_r_1.95.dat
+setenv NAMDRST /home/jorge/restart/h2_r_1.95.namdrst
+setenv AOINTS /home/jorge/dev/gamess/scratch/h2_r_1.95.F08
+setenv MOINTS /home/jorge/dev/gamess/scratch/h2_r_1.95.F09
+setenv DICTNRY /home/jorge/dev/gamess/scratch/h2_r_1.95.F10
+setenv DRTFILE /home/jorge/dev/gamess/scratch/h2_r_1.95.F11
+setenv CIVECTR /home/jorge/dev/gamess/scratch/h2_r_1.95.F12
+setenv CASINTS /home/jorge/dev/gamess/scratch/h2_r_1.95.F13
+setenv CIINTS /home/jorge/dev/gamess/scratch/h2_r_1.95.F14
+setenv WORK15 /home/jorge/dev/gamess/scratch/h2_r_1.95.F15
+setenv WORK16 /home/jorge/dev/gamess/scratch/h2_r_1.95.F16
+setenv CSFSAVE /home/jorge/dev/gamess/scratch/h2_r_1.95.F17
+setenv FOCKDER /home/jorge/dev/gamess/scratch/h2_r_1.95.F18
+setenv WORK19 /home/jorge/dev/gamess/scratch/h2_r_1.95.F19
+setenv DASORT /home/jorge/dev/gamess/scratch/h2_r_1.95.F20
+setenv DIABDAT /home/jorge/dev/gamess/scratch/h2_r_1.95.F21
+setenv DFTINTS /home/jorge/dev/gamess/scratch/h2_r_1.95.F21
+setenv DFTGRID /home/jorge/dev/gamess/scratch/h2_r_1.95.F22
+setenv JKFILE /home/jorge/dev/gamess/scratch/h2_r_1.95.F23
+setenv ORDINT /home/jorge/dev/gamess/scratch/h2_r_1.95.F24
+setenv EFPIND /home/jorge/dev/gamess/scratch/h2_r_1.95.F25
+setenv PCMDATA /home/jorge/dev/gamess/scratch/h2_r_1.95.F26
+setenv PCMINTS /home/jorge/dev/gamess/scratch/h2_r_1.95.F27
+setenv SVPWRK1 /home/jorge/dev/gamess/scratch/h2_r_1.95.F26
+setenv SVPWRK2 /home/jorge/dev/gamess/scratch/h2_r_1.95.F27
+setenv COSCAV /home/jorge/dev/gamess/scratch/h2_r_1.95.F26
+setenv COSDATA /home/jorge/restart/h2_r_1.95.cosmo
+setenv COSPOT /home/jorge/restart/h2_r_1.95.pot
+setenv MLTPL /home/jorge/dev/gamess/scratch/h2_r_1.95.F28
+setenv MLTPLT /home/jorge/dev/gamess/scratch/h2_r_1.95.F29
+setenv DAFL30 /home/jorge/dev/gamess/scratch/h2_r_1.95.F30
+setenv SOINTX /home/jorge/dev/gamess/scratch/h2_r_1.95.F31
+setenv SOINTY /home/jorge/dev/gamess/scratch/h2_r_1.95.F32
+setenv SOINTZ /home/jorge/dev/gamess/scratch/h2_r_1.95.F33
+setenv SORESC /home/jorge/dev/gamess/scratch/h2_r_1.95.F34
+setenv RISM01 /home/jorge/dev/gamess/scratch/h2_r_1.95.F26R
+setenv RISM02 /home/jorge/dev/gamess/scratch/h2_r_1.95.F27R
+setenv QOPWRF /home/jorge/dev/gamess/scratch/h2_r_1.95.wrf
+setenv GCILIST /home/jorge/dev/gamess/scratch/h2_r_1.95.F37
+setenv HESSIAN /home/jorge/dev/gamess/scratch/h2_r_1.95.F38
+setenv QMMMTEI /home/jorge/dev/gamess/scratch/h2_r_1.95.F39
+setenv SOCCDAT /home/jorge/dev/gamess/scratch/h2_r_1.95.F40
+setenv AABB41 /home/jorge/dev/gamess/scratch/h2_r_1.95.F41
+setenv BBAA42 /home/jorge/dev/gamess/scratch/h2_r_1.95.F42
+setenv BBBB43 /home/jorge/dev/gamess/scratch/h2_r_1.95.F43
+setenv REMD /home/jorge/dev/gamess/scratch/h2_r_1.95.F44
+setenv UNV /home/jorge/dev/gamess/scratch/h2_r_1.95.F45
+setenv UNPV /home/jorge/dev/gamess/scratch/h2_r_1.95.F46
+setenv MCQD50 /home/jorge/dev/gamess/scratch/h2_r_1.95.F50
+setenv MCQD51 /home/jorge/dev/gamess/scratch/h2_r_1.95.F51
+setenv MCQD52 /home/jorge/dev/gamess/scratch/h2_r_1.95.F52
+setenv MCQD53 /home/jorge/dev/gamess/scratch/h2_r_1.95.F53
+setenv MCQD54 /home/jorge/dev/gamess/scratch/h2_r_1.95.F54
+setenv MCQD55 /home/jorge/dev/gamess/scratch/h2_r_1.95.F55
+setenv MCQD56 /home/jorge/dev/gamess/scratch/h2_r_1.95.F56
+setenv MCQD57 /home/jorge/dev/gamess/scratch/h2_r_1.95.F57
+setenv MCQD58 /home/jorge/dev/gamess/scratch/h2_r_1.95.F58
+setenv MCQD59 /home/jorge/dev/gamess/scratch/h2_r_1.95.F59
+setenv MCQD60 /home/jorge/dev/gamess/scratch/h2_r_1.95.F60
+setenv MCQD61 /home/jorge/dev/gamess/scratch/h2_r_1.95.F61
+setenv MCQD62 /home/jorge/dev/gamess/scratch/h2_r_1.95.F62
+setenv MCQD63 /home/jorge/dev/gamess/scratch/h2_r_1.95.F63
+setenv MCQD64 /home/jorge/dev/gamess/scratch/h2_r_1.95.F64
+setenv NMRINT1 /home/jorge/dev/gamess/scratch/h2_r_1.95.F61
+setenv NMRINT2 /home/jorge/dev/gamess/scratch/h2_r_1.95.F62
+setenv NMRINT3 /home/jorge/dev/gamess/scratch/h2_r_1.95.F63
+setenv NMRINT4 /home/jorge/dev/gamess/scratch/h2_r_1.95.F64
+setenv NMRINT5 /home/jorge/dev/gamess/scratch/h2_r_1.95.F65
+setenv NMRINT6 /home/jorge/dev/gamess/scratch/h2_r_1.95.F66
+setenv DCPHFH2 /home/jorge/dev/gamess/scratch/h2_r_1.95.F67
+setenv DCPHF21 /home/jorge/dev/gamess/scratch/h2_r_1.95.F68
+setenv ELNUINT /home/jorge/dev/gamess/scratch/h2_r_1.95.F67
+setenv NUNUINT /home/jorge/dev/gamess/scratch/h2_r_1.95.F68
+setenv GVVPT /home/jorge/dev/gamess/scratch/h2_r_1.95.F69
+setenv NUMOIN /home/jorge/dev/gamess/scratch/h2_r_1.95.F69
+setenv NUMOCAS /home/jorge/dev/gamess/scratch/h2_r_1.95.F70
+setenv NUELMO /home/jorge/dev/gamess/scratch/h2_r_1.95.F71
+setenv NUELCAS /home/jorge/dev/gamess/scratch/h2_r_1.95.F72
+setenv EPOVRLP /home/jorge/dev/gamess/scratch/h2_r_1.95.F73
+setenv RIVMAT /home/jorge/dev/gamess/scratch/h2_r_1.95.F51
+setenv RIT2A /home/jorge/dev/gamess/scratch/h2_r_1.95.F52
+setenv RIT3A /home/jorge/dev/gamess/scratch/h2_r_1.95.F53
+setenv RIT2B /home/jorge/dev/gamess/scratch/h2_r_1.95.F54
+setenv RIT3B /home/jorge/dev/gamess/scratch/h2_r_1.95.F55
+setenv KI /home/jorge/dev/gamess/scratch/h2_r_1.95.F47
+setenv BI /home/jorge/dev/gamess/scratch/h2_r_1.95.F48
+setenv PRMERI /home/jorge/dev/gamess/scratch/h2_r_1.95.F49
+setenv TRSERI /home/jorge/dev/gamess/scratch/h2_r_1.95.F50
+setenv PVP /home/jorge/dev/gamess/scratch/h2_r_1.95.F51
+setenv TPVPI /home/jorge/dev/gamess/scratch/h2_r_1.95.F52
+setenv TPVPJ /home/jorge/dev/gamess/scratch/h2_r_1.95.F53
+setenv PPVPP /home/jorge/dev/gamess/scratch/h2_r_1.95.F54
+setenv TPPVPP /home/jorge/dev/gamess/scratch/h2_r_1.95.F55
+setenv DEN2P1 /home/jorge/dev/gamess/scratch/h2_r_1.95.F70
+setenv DEN2P2 /home/jorge/dev/gamess/scratch/h2_r_1.95.F71
+setenv DEN2P3 /home/jorge/dev/gamess/scratch/h2_r_1.95.F72
+setenv DEN2P4 /home/jorge/dev/gamess/scratch/h2_r_1.95.F73
+setenv DEN2NM /home/jorge/dev/gamess/scratch/h2_r_1.95.F74
+setenv DEN2OPT /home/jorge/dev/gamess/scratch/h2_r_1.95.F75
+setenv GMCREF /home/jorge/dev/gamess/scratch/h2_r_1.95.F70
+setenv GMCO2R /home/jorge/dev/gamess/scratch/h2_r_1.95.F71
+setenv GMCROC /home/jorge/dev/gamess/scratch/h2_r_1.95.F72
+setenv GMCOOC /home/jorge/dev/gamess/scratch/h2_r_1.95.F73
+setenv GMCCC0 /home/jorge/dev/gamess/scratch/h2_r_1.95.F74
+setenv GMCHMA /home/jorge/dev/gamess/scratch/h2_r_1.95.F75
+setenv GMCEI1 /home/jorge/dev/gamess/scratch/h2_r_1.95.F76
+setenv GMCEI2 /home/jorge/dev/gamess/scratch/h2_r_1.95.F77
+setenv GMCEOB /home/jorge/dev/gamess/scratch/h2_r_1.95.F78
+setenv GMCEDT /home/jorge/dev/gamess/scratch/h2_r_1.95.F79
+setenv GMCERF /home/jorge/dev/gamess/scratch/h2_r_1.95.F80
+setenv GMCHCR /home/jorge/dev/gamess/scratch/h2_r_1.95.F81
+setenv GMCGJK /home/jorge/dev/gamess/scratch/h2_r_1.95.F82
+setenv GMCGAI /home/jorge/dev/gamess/scratch/h2_r_1.95.F83
+setenv GMCGEO /home/jorge/dev/gamess/scratch/h2_r_1.95.F84
+setenv GMCTE1 /home/jorge/dev/gamess/scratch/h2_r_1.95.F85
+setenv GMCTE2 /home/jorge/dev/gamess/scratch/h2_r_1.95.F86
+setenv GMCHEF /home/jorge/dev/gamess/scratch/h2_r_1.95.F87
+setenv GMCMOL /home/jorge/dev/gamess/scratch/h2_r_1.95.F88
+setenv GMCMOS /home/jorge/dev/gamess/scratch/h2_r_1.95.F89
+setenv GMCWGT /home/jorge/dev/gamess/scratch/h2_r_1.95.F90
+setenv GMCRM2 /home/jorge/dev/gamess/scratch/h2_r_1.95.F91
+setenv GMCRM1 /home/jorge/dev/gamess/scratch/h2_r_1.95.F92
+setenv GMCR00 /home/jorge/dev/gamess/scratch/h2_r_1.95.F93
+setenv GMCRP1 /home/jorge/dev/gamess/scratch/h2_r_1.95.F94
+setenv GMCRP2 /home/jorge/dev/gamess/scratch/h2_r_1.95.F95
+setenv GMCVEF /home/jorge/dev/gamess/scratch/h2_r_1.95.F96
+setenv GMCDIN /home/jorge/dev/gamess/scratch/h2_r_1.95.F97
+setenv GMC2SZ /home/jorge/dev/gamess/scratch/h2_r_1.95.F98
+setenv GMCCCS /home/jorge/dev/gamess/scratch/h2_r_1.95.F99
+unset echo
+rm: cannot remove '/home/jorge/restart/h2_r_1.95.casino': No such file or directory
+rm: cannot remove '/home/jorge/restart/h2_r_1.95.dmn': No such file or directory
+rm: cannot remove '/home/jorge/restart/h2_r_1.95.cim': No such file or directory
+rm: cannot remove '/home/jorge/restart/h2_r_1.95.cosmo': No such file or directory
+rm: cannot remove '/home/jorge/restart/h2_r_1.95.pot': No such file or directory
+rm: cannot remove '/home/jorge/restart/h2_r_1.95.gamma': No such file or directory
+rm: cannot remove '/home/jorge/restart/h2_r_1.95.efp': No such file or directory
+rm: cannot remove '/home/jorge/restart/h2_r_1.95.dip': No such file or directory
+rm: cannot remove '/home/jorge/restart/h2_r_1.95.hs1': No such file or directory
+rm: cannot remove '/home/jorge/restart/h2_r_1.95.hs2': No such file or directory
+rm /home/jorge/restart/h2_r_1.95.dat
+rm: cannot remove '/home/jorge/restart/h2_r_1.95.qmw': No such file or directory
+rm: cannot remove '/home/jorge/restart/h2_r_1.95.rst': No such file or directory
+rm: cannot remove '/home/jorge/restart/h2_r_1.95.trj': No such file or directory
+-----debug----
+HOSTFILE /home/jorge/dev/gamess/scratch/h2_r_1.95.nodes.mpd contains
+Big-Chungus
+--------------
+-----debug----
+PROCFILE /home/jorge/dev/gamess/scratch/h2_r_1.95.processes.mpd contains
+Big-Chungus:12
+--------------
+setenv I_MPI_PIN disable
+unset echo
+setenv I_MPI_SHM_OPT shm
+setenv I_MPI_WAIT_MODE 1
+setenv I_MPI_DEBUG 0
+unset echo
+-----debug----
+the execution path is
+/home/jorge/install/intel-hpc/mpi/2021.14/intel64/bin /shared/cmake/3.28.3/bin /home/jorge/install/intel-hpc/mpi/2021.14/opt/mpi/libfabric/bin /home/jorge/install/intel-hpc/mpi/2021.14/bin /home/jorge/install/intel-hpc/compiler/2025.0/bin /home/jorge/install/intel-hpc/compiler/2025.0/bin/compiler /home/jorge/.nvm/versions/node/v16.20.2/bin /home/jorge/.local/bin /shared/Modules/bin /usr/local/cuda/bin /usr/local/cmake/3.17.3/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/games /usr/local/games /snap/bin
+ 
+the library path is
+/home/jorge/install/intel-hpc/mpi/2021.14/intel64/lib:/home/jorge/install/intel-hpc/mpi/2021.14/intel64/lib/release/:/shared/cmake/3.28.3/lib:/home/jorge/install/intel-hpc/mpi/2021.14/opt/mpi/libfabric/lib:/home/jorge/install/intel-hpc/mpi/2021.14/lib:/home/jorge/install/intel-hpc/mkl/2025.0/lib:/home/jorge/install/intel-hpc/umf/0.9/lib/:/home/jorge/install/intel-hpc/compiler/2025.0/opt/compiler/lib:/home/jorge/install/intel-hpc/compiler/2025.0/lib:/home/jorge/install/intel-hpc/tbb/2022.0/lib
+ 
+The dynamically linked libraries for this binary are
+/home/jorge/dev/gamess/gamess.00.x :
+/home/jorge/dev/gamess/gamess.00.x :
+	linux-vdso.so.1 (0x00007ffed59e4000)
+	libimf.so => /home/jorge/install/intel-hpc/compiler/2025.0/lib/libimf.so (0x00007f691895e000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f6918853000)
+	libmpifort.so.12 => /home/jorge/install/intel-hpc/mpi/2021.14/lib/libmpifort.so.12 (0x00007f6918400000)
+	libmpi.so.12 => /home/jorge/install/intel-hpc/mpi/2021.14/lib/libmpi.so.12 (0x00007f690e400000)
+	libirng.so => /home/jorge/install/intel-hpc/compiler/2025.0/lib/libirng.so (0x00007f690e307000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f690e0de000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f6918d6c000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f6918831000)
+	libintlc.so.5 => /home/jorge/install/intel-hpc/compiler/2025.0/lib/libintlc.so.5 (0x00007f690e07c000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007f691882c000)
+	libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007f6918827000)
+--------------
+MPI kickoff will run GAMESS on 6 cores in 1 nodes.
+The binary to be executed is /home/jorge/dev/gamess/gamess.00.x
+MPI will run 6 compute processes and 6 data servers,
+    placing 6 of each process type onto each node.
+The scratch disk space on each node is /home/jorge/dev/gamess/scratch, with free space
+Filesystem      1K-blocks       Used Available Use% Mounted on
+/dev/sda2      1844319788 1641955120 108604568  94% /
+setenv I_MPI_HYDRA_ENV all
+setenv I_MPI_PERHOST 12
+unset echo
+mpiexec.hydra -f /home/jorge/dev/gamess/scratch/h2_r_1.95.processes.mpd -n 12 /home/jorge/dev/gamess/gamess.00.x
+          *******************************************************
+          *                                                     *
+          *      GAMESS VERSION = 15 JUL 2024 (R2 Patch 1)          *
+          *                                                     *
+          *              doi.org/10.1063/5.0005188              *
+          *                                                     *
+          **************** 64 BIT LINUX VERSION *****************
+
+  GAMESS HAS BEEN MADE POSSIBLE WITH IMPORTANT CONTRIBUTIONS FROM
+  THE FOLLOWING INDIVIDUALS (IN ALPHABETICAL ORDER):
+
+     IVANA ADAMOVIC, CHRISTINE AIKENS, TOMOKO AKAMA,
+     MELISA ALKAN, YURI ALEXEEV, YURIKO AOKI, POOJA ARORA,
+     TOSHIO ASADA, ANDREY ASADCHEV, KIM K. BALDRIDGE,
+     PRADIPTA BANDYOPADHYAY, TAYLOR A. BARNES, MARIA BARYSZ,
+     ROB BELL, JONATHAN BENTZ, COLLEEN BERTONI,
+     JERRY A. BOATZ, BRETT BODE, KURT BRORSEN, KURT R. BRORSEN,
+     LAIMUTIS BYTAUTAS, CALEB CARLIN, LAURA CARRINGTON,
+     GALINA CHABAN, BENOIT CHAMPAGNE, WEI CHEN, MAHITO CHIBA,
+     DAN CHIPMAN, CHEOL HO CHOI, TANNER CULPITT,
+     DIPAYAN DATTA, PAUL DAY, ALBERT DEFUSCO,
+     NUWAN DESILVA, J. EMILIANO DEUSTUA,
+     TIM DUDLEY, MICHEL DUPUIS, STEVEN T. ELBERT,
+     DMITRI FEDOROV, KATHERINE FERRERAS, MICHAEL FILATOV,
+     ALEX FINDLATER,GRAHAM FLETCHER, MARK FREITAG,
+     CHRISTIAN FRIEDL, DAVID GARMER, 
+     IGOR S. GERASIMOV, KURT GLAESEMANN,
+     MARK S. GORDON, JEFFREY R. GOUR, FENG LONG GU,
+     EMILIE B. GUIDEZ, ANASTASIA GUNINA, SHARON HAMMES-SCHIFFER,
+     MASATAKE HARUTA, KIMIHIKO HIRAO, YASUHIRO IKABATA,
+     TZVETELIN IORDANOV, STEPHAN IRLE, KAZUYA ISHIMURA,
+     JOE IVANIC, FRANK JENSEN, JAN H. JENSEN, VISVALDAS KAIRYS,
+     MUNEAKI KAMIYA, MICHIO KATOUDA, NAOAKI KAWAKAMI, DAN KEMP,
+     BERNARD KIRTMAN, KAZUO KITAURA, MARIUSZ KLOBUKOWSKI,
+     MASATO KOBAYASHI, KONSTANTIN KOMAROV, PRAKASHAN KORAMBATH,
+     JACEK KORCHOWIEC, SHIRO KOSEKI, KAROL KOWALSKI,
+     JIMMY KROMANN, STANISLAW A. KUCHARSKI, HENRY KURTZ,
+     SAROM SOK LEANG, SEUNGHOON LEE, HUI LI, SHUHUA LI, WEI LI,
+     JESSE J. LUTZ, ALEKSANDR O. LYKHIN,
+     ILIAS MAGOULAS, MARCIN MAKOWSKI,
+     JOANI MATO, NIKITA MATSUNAGA, BENEDETTA MENNUCCI,
+     GRANT MERRILL, NORIYUKI MINEZAWA, VLADIMIR MIRONOV,
+     EISAKU MIYOSHI, JOHN A. MONTGOMERY JR., HIROTOSHI MORI,
+     JONATHAN MULLIN, MONIKA MUSIAL, SHIGERU NAGASE,
+     TAKESHI NAGATA, HIROMI NAKAI, TAKAHITO NAKAJIMA,
+     YUYA NAKAJIMA, HARUYUKI NAKANO, HIROYA NAKATA, SEAN NEDD,
+     HEATHER NETZLOFF, KIET A. NGUYEN, YOSHIO NISHIMOTO,
+     BOSILJKA NJEGIC, RYAN OLSON, MIKE PAK, ROBERTO PEVERATI,
+     BUU PHAM, PIOTR PIECUCH, ANNA POMOGAEVA, DAVID POOLE,
+     SPENCER PRUITT, OLIVIER QUINET, LUKE ROSKOP,
+     KLAUS RUEDENBERG, ANDREW SAND, TOSAPORN SATTASATHUCHANA,
+     NOZOMI SAWADA, MICHAEL W. SCHMIDT, PATRICK E. SCHNEIDER,
+     JUNJI SEINO, PRACHI SHARMA, JUN SHEN, JIM SHOEMAKER,
+     GEORGE SCHOENDORFF, YINAN SHU, DEJUN SI, JONATHAN SKONE,
+     LYUDMILA SLIPCHENKO, TONY SMITH, JIE SONG, MARK SPACKMAN,
+     CASPER STEINMANN, WALT STEVENS, PEIFENG SU, SHUJUN SU,
+     CHET SWALINA, CHINAMI TAKASHIMA, TETSUYA TAKETSUGU,
+     ZHEN TAO, NANDUN THELLAMUREGE, ANANTA TIWARI,
+     SEIKEN TOKURA, JACOPO TOMASI,
+     TSUGUKI TOUMA, TAKAO TSUNEDA, HIROAKI UMEDA,
+     JORGE LUIS GALVEZ VALLEJO, YALI WANG, SIMON WEBB,
+     AARON WEST, THERESA L. WINDUS, MARTA WLOCH,
+     PENG XU, KIYOSHI YAGI, SUSUMU YANAGISAWA, YANG YANG,
+     SOOHAENG YOO, TAKESHI YOSHIKAWA, FEDERICO ZAHARIEV,
+     TOBY ZENG
+
+  WHO ARE SUPPORTED BY THEIR INSTITUTION/UNIVERSITY/COMPANY/GROUP
+  (IN ALPHABETICAL ORDER):
+
+     EP ANALYTICS,
+     FACULTES UNIVERSITAIRES NOTRE-DAME DE LA PAIX,
+     INSTITUTE FOR MOLECULAR SCIENCE, IOWA STATE UNIVERSITY,
+     JACKSON STATE UNIVERSITY, JOHANNES KEPLER UNIVERSITY LINZ,
+     KYUNGPOOK NATIONAL UNIVERSITY
+     KYUSHU UNIVERSITY, MICHIGAN STATE UNIVERSITY,
+     MIE UNIVERSITY, THE MOLECULAR SCIENCES SOFTWARE INSTITUTE,
+     MOSCOW STATE UNIVERSITY,
+     N. COPERNICUS UNIVERSITY, NAGOYA UNIVERSITY,
+     NANJING UNIVERSITY, NAT. INST. OF ADVANCED INDUSTRIAL
+     SCIENCE AND TECHNOLOGY, NATIONAL INST. OF STANDARDS AND
+     TECHNOLOGY, NESMEYANOV INSTITUTE OF ORGANOELEMENT COMPOUNDS
+     OF RUSSIAN ACADEMY OF SCIENCES, OSAKA PREFECTURE UNIVERSITY,
+     PENNSYLVANIA STATE UNIVERSITY, TOKYO INSTITUTE OF TECHNOLOGY,
+     UNIVERSITY OF AARHUS, UNIVERSITY OF ALBERTA,
+     UNIVERSITY OF CALIFORNIA AT SANTA BARBARA,
+     UNIVERSITY OF COPENHAGEN, UNIVERSITY OF IOWA,
+     UNIVERSITY OF MEMPHIS, UNIVERSITY OF MINNESOTA,
+     UNIVERSITY OF NEBRASKA, UNIVERSITY OF NEW ENGLAND,
+     UNIVERSITY OF NOTRE DAME, UNIVERSITY OF PISA,
+     UNIVERSITY OF SILESIA, UNIVERSITY OF TOKYO,
+     UNIVERSITY OF ZURICH, WASEDA UNIVERSITY,
+     YALE UNIVERSITY
+
+  GAMESS SOFTWARE MANAGEMENT TEAM FOR THIS RELEASE:
+     MARK S. GORDON (TEAM LEAD),
+     BRETT BODE (SENIOR ADVISOR),
+     GIUSEPPE BARCA,
+     COLLEEN BERTONI,
+     KRISTOPHER KEIPERT (ADVISOR),
+     SAROM S. LEANG (DEVELOPMENT LEAD),
+     BUU PHAM,
+     JACKSON HAYES (WEBSITE ADMINISTRATOR),
+     PENG XU
+
+
+ PARALLEL VERSION RUNNING ON        6 PROCESSORS IN        1 NODES.
+
+ EXECUTION OF GAMESS BEGUN 16:40:38 10-APR-2025    
+
+            ECHO OF THE FIRST FEW INPUT CARDS -
+ INPUT CARD>!   File created by MacMolPlt 7.7.3                                             
+ INPUT CARD> $CONTRL SCFTYP=rhf RUNTYP=ENERGY MAXIT=200 MULT=1 $END                         
+ INPUT CARD> $contrl ispher=1 $end                                                          
+ INPUT CARD> $contrl dfttyp=uselibxc $end                                                   
+ INPUT CARD> $libxc functional=PBE0 $end                                                    
+ INPUT CARD> $dft dc=.true. idcver=3 $end                                                   
+ INPUT CARD> $SYSTEM mwords=1000 $END                                                       
+ INPUT CARD> $BASIS GBASIS=ccq $END                                                         
+ INPUT CARD> $SCF DIRSCF=.TRUE. $END                                                        
+ INPUT CARD> $DATA                                                                          
+ INPUT CARD>Title                                                                           
+ INPUT CARD>C1                                                                              
+ INPUT CARD>H 1.0 0.0 0.0 0.0                                                               
+ INPUT CARD>H 1.0 1.95 0.0 0.0                                                              
+ INPUT CARD> $END                                                                           
+   1000000000 WORDS OF MEMORY AVAILABLE
+
+     BASIS OPTIONS
+     -------------
+     GBASIS=CCQ          IGAUSS=       0      POLAR=NONE    
+     NDFUNC=       0     NFFUNC=       0     DIFFSP=       F
+     NPFUNC=       0      DIFFS=       F     BASNAM=        
+
+
+     RUN TITLE
+     ---------
+ Title                                                                           
+
+ THE POINT GROUP OF THE MOLECULE IS C1      
+ THE ORDER OF THE PRINCIPAL AXIS IS     0
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ H           1.0     0.0000000000        0.0000000000        0.0000000000
+ H           1.0     3.6849656761        0.0000000000        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 H          2 H     
+
+   1 H       0.0000000    1.9500000 *
+   2 H       1.9500000 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+     ATOMIC BASIS SET
+     ----------------
+ THE CONTRACTED PRIMITIVE FUNCTIONS HAVE BEEN UNNORMALIZED
+ THE CONTRACTED BASIS FUNCTIONS ARE NOW NORMALIZED TO UNITY
+
+  SHELL TYPE  PRIMITIVE        EXPONENT          CONTRACTION COEFFICIENT(S)
+
+ H         
+
+      1   S       1            82.6400000    0.022950757793
+      1   S       2            12.4100000    0.175540118054
+      1   S       3             2.8240000    0.864703550962
+
+      2   S       4             0.7977000    1.000000000000
+
+      3   S       5             0.2581000    1.000000000000
+
+      4   S       6             0.0898900    1.000000000000
+
+      5   P       7             2.2920000    1.000000000000
+
+      6   P       8             0.8380000    1.000000000000
+
+      7   P       9             0.2920000    1.000000000000
+
+      8   D      10             2.0620000    1.000000000000
+
+      9   D      11             0.6620000    1.000000000000
+
+     10   F      12             1.3970000    1.000000000000
+
+ H         
+
+     11   S      13            82.6400000    0.022950757793
+     11   S      14            12.4100000    0.175540118054
+     11   S      15             2.8240000    0.864703550962
+
+     12   S      16             0.7977000    1.000000000000
+
+     13   S      17             0.2581000    1.000000000000
+
+     14   S      18             0.0898900    1.000000000000
+
+     15   P      19             2.2920000    1.000000000000
+
+     16   P      20             0.8380000    1.000000000000
+
+     17   P      21             0.2920000    1.000000000000
+
+     18   D      22             2.0620000    1.000000000000
+
+     19   D      23             0.6620000    1.000000000000
+
+     20   F      24             1.3970000    1.000000000000
+
+ TOTAL NUMBER OF BASIS SET SHELLS             =   20
+ NUMBER OF CARTESIAN GAUSSIAN BASIS FUNCTIONS =   70
+ NOTE: THIS RUN WILL RESTRICT THE MO VARIATION SPACE TO SPHERICAL HARMONICS.
+ THE NUMBER OF ORBITALS KEPT IN THE VARIATIONAL SPACE WILL BE PRINTED LATER.
+ NUMBER OF ELECTRONS                          =    2
+ CHARGE OF MOLECULE                           =    0
+ SPIN MULTIPLICITY                            =    1
+ NUMBER OF OCCUPIED ORBITALS (ALPHA)          =    1
+ NUMBER OF OCCUPIED ORBITALS (BETA )          =    1
+ TOTAL NUMBER OF ATOMS                        =    2
+ THE NUCLEAR REPULSION ENERGY IS        0.2713729483
+
+ THIS MOLECULE IS RECOGNIZED AS BEING LINEAR,
+ ORBITAL LZ DEGENERACY TOLERANCE ETOLLZ= 1.00E-06
+
+ SELECTED MURRAY-HANDY-LAMING RADIAL GRID
+
+ LEGACY BECKE'S FUZZY CELL METHOD
+
+ SELECTED ORIGINAL BECKE'S PARTITION FUNCTION
+
+     LEBEDEV GRID-BASED DFT OPTIONS
+     ------------------------------
+     DFTTYP=USELIBXC
+     NRAD  =      96     NLEB  =     302
+     NRAD0 =      24     NLEB0 =     110
+     SWOFF =    5.00E-03 (PURE SCF -> DFT)
+     SWITCH=    3.00E-04 (COARSE -> TIGHT GRID)
+     THRESH=    0.00E+00 GTHRE=    1.00E+00
+ 
+ The LibXC 5.1.7 version is used!
+ 
+ THE FOLLOWING PAPERS SHOULD BE CITED WHEN USING LIBXC INTERFACE:
+ S. Lehtola, C. Steigemann, M. J. Oliveira, and M. A. Marques, SoftwareX 7, 1 (2018)
+ DOI: 10.1016/j.softx.2017.11.002
+ and
+ Igor S. Gerasimov, Federico Zahariev, Sarom S. Leang, Anton Tesliuk, Mark S. Gordon, Michael G. Medvedev,
+ Introducing LibXC into GAMESS (US),
+ Mendeleev Commun., 2021, 31, 302–305
+ DOI: 10.1016/j.mencom.2021.05.008
+ 
+ The information about selected functionals:
+The PBEH (PBE0) exchange-correlation functional will be used with a coefficient   1.00000000E+00.
+The functional has been described in the following articles:
+[1] C. Adamo and V. Barone, J. Chem. Phys. 110, 6158 (1999); DOI: 10.1063/1.478522
+[2] M. Ernzerhof and G. E. Scuseria, J. Chem. Phys. 110, 5029 (1999); DOI: 10.1063/1.478401
+ 
+The global hybrid part:                  2.50000000E-01
+ 
+
+ GRIMME'S EMPIRICAL DISPERSION CORRECTION= T
+  ________________________________
+ 
+           DFTD3 V1.2             
+   S.GRIMME, UNIVERSITY MUENSTER  
+   WED MAR 10 08:38:00 CET 2010   
+  ________________________________
+ 
+ PLEASE CITE DFT-D3 WORK DONE WITH THIS CODE AS:
+ S. GRIMME, J. ANTONY, S. EHRLICH AND H. KRIEG,
+ J. CHEM. PHYS, 132 (2010), 154104.
+ IF USED WITH BJ-DAMPING CITE ALSO
+ S. GRIMME, S. EHRLICH AND L. GOERIGK,
+ J. COMPUT. CHEM. 32 (2011), 1456-1465
+ 
+ DFT-D3 PARAMETERS WILL BE LOADED AND PRINTED
+ BEFORE THE RESULTS
+ 
+ IMPLEMENTATION OF DFT-D IN GAMESS BY:
+ R.PEVERATI AND K.K.BALDRIDGE, 
+ J.CHEM.THEORY COMPUT. 4,(2008), 2030-2048
+ 
+
+     $CONTRL OPTIONS
+     ---------------
+ SCFTYP=RHF          RUNTYP=ENERGY       EXETYP=RUN     
+ MPLEVL=       0     CITYP =NONE         CCTYP =NONE         VBTYP =NONE    
+ DFTTYP=USELIBXC     TDDFT =NONE    
+ MULT  =       1     ICHARG=       0     NZVAR =       0     COORD =UNIQUE  
+ PP    =NONE         RELWFN=NONE         LOCAL =NONE         NUMGRD=       F
+ ISPHER=       1     NOSYM =       0     MAXIT =     200     UNITS =ANGS    
+ PLTORB=       F     MOLPLT=       F     AIMPAC=       F     FRIEND=        
+ NPRINT=       7     IREST =       0     GEOM  =INPUT   
+ NORMF =       0     NORMP =       0     ITOL  =      20     ICUT  =       9
+ INTTYP=BEST         GRDTYP=BEST         QMTTOL= 1.0E-06
+
+     $SYSTEM OPTIONS
+     ---------------
+  REPLICATED MEMORY=  1000000000 WORDS (ON EVERY NODE).
+ DISTRIBUTED MEMDDI=           0 MILLION WORDS IN AGGREGATE,
+ MEMDDI DISTRIBUTED OVER   6 PROCESSORS IS           0 WORDS/PROCESSOR.
+ TOTAL MEMORY REQUESTED ON EACH PROCESSOR=  1000000000 WORDS.
+ TIMLIM=      525600.00 MINUTES, OR     365.0 DAYS.
+ PARALL= T  BALTYP=  DLB     KDIAG=    0  COREFL= F
+ MXSEQ2=     300 MXSEQ3=     150  mem10=         0  mem22=         0
+
+          ----------------
+          PROPERTIES INPUT
+          ----------------
+
+     MOMENTS            FIELD           POTENTIAL          DENSITY
+ IEMOM =       1   IEFLD =       0   IEPOT =       0   IEDEN =       0
+ WHERE =COMASS     WHERE =NUCLEI     WHERE =NUCLEI     WHERE =NUCLEI  
+ OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH    
+ IEMINT=       0   IEFINT=       0                     IEDINT=       0
+                                                       MORB  =       0
+          EXTRAPOLATION IN EFFECT
+          DIIS IN EFFECT
+ ORBITAL PRINTING OPTION: NPREO=     1    70     2     1
+
+     ----------------------
+     TARGET OFFLOAD OPTIONS
+     ----------------------
+     RHF    =       F
+     CPHF    =       F
+     MAKEFP =       F
+
+     -------------------------------
+     INTEGRAL TRANSFORMATION OPTIONS
+     -------------------------------
+     NWORD  =            0
+     CUTTRF = 1.0E-09     MPTRAN =       0
+     DIRTRF =       T     AOINTS =DUP     
+
+          ----------------------
+          INTEGRAL INPUT OPTIONS
+          ----------------------
+ NOPK  =       1 NORDER=       0 SCHWRZ=       T
+
+     ------------------------------------------
+     THE POINT GROUP IS C1 , NAXIS= 0, ORDER= 1
+     ------------------------------------------
+
+ -- VARIATIONAL SPACE WILL BE RESTRICTED TO PURE SPHERICAL HARMONICS ONLY --
+ AFTER EXCLUDING CONTAMINANT COMBINATIONS FROM THE CARTESIAN GAUSSIAN BASIS
+ SET, THE NUMBER OF SPHERICAL HARMONICS KEPT IN THE VARIATION SPACE IS   60
+
+     DIMENSIONS OF THE SYMMETRY SUBSPACES ARE
+ A   =   60
+
+ ..... DONE SETTING UP THE RUN .....
+ CPU     0: STEP CPU TIME=     0.02 TOTAL CPU TIME=          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    98.84%
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ CPU     0: STEP CPU TIME=     0.00 TOTAL CPU TIME=          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    98.92%
+
+          -------------
+          GUESS OPTIONS
+          -------------
+          GUESS =HUCKEL            NORB  =       0          NORDER=       0
+          MIX   =       F          PRTMO =       F          PUNMO =       F
+          TOLZ  = 1.0E-08          TOLE  = 1.0E-05
+          SYMDEN=       F          PURIFY=       F
+
+ INITIAL GUESS ORBITALS GENERATED BY HUCKEL   ROUTINE.
+ HUCKEL GUESS REQUIRES     36722 WORDS.
+
+ STATISTICS FOR GENERATION OF SYMMETRY ORBITAL -Q- MATRIX
+ NUMBER OF CARTESIAN ATOMIC ORBITALS=         70
+ NUMBER OF SPHERICAL CONTAMINANTS DROPPED=    10
+ NUMBER OF LINEARLY DEPENDENT MOS DROPPED=     0
+ TOTAL NUMBER OF MOS IN VARIATION SPACE=      60
+
+ SYMMETRIES FOR INITIAL GUESS ORBITALS FOLLOW.   BOTH SET(S).
+     1 ORBITALS ARE OCCUPIED (    0 CORE ORBITALS).
+     1=A        2=A        3=A        4=A        5=A        6=A        7=A   
+     8=A        9=A       10=A       11=A   
+ ...... END OF INITIAL ORBITAL SELECTION ......
+ CPU     0: STEP CPU TIME=     0.02 TOTAL CPU TIME=          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.1 SECONDS, CPU UTILIZATION IS    74.23%
+
+                    ----------------------
+                    AO INTEGRAL TECHNOLOGY
+                    ----------------------
+     S,P,L SHELL ROTATED AXIS INTEGRALS, REPROGRAMMED BY
+        KAZUYA ISHIMURA (IMS) AND JOSE SIERRA (SYNSTAR).
+     S,P,D,L SHELL ROTATED AXIS INTEGRALS PROGRAMMED BY
+        KAZUYA ISHIMURA (INSTITUTE FOR MOLECULAR SCIENCE).
+     S,P,D,F,G SHELL TO TOTAL QUARTET ANGULAR MOMENTUM SUM 5,
+        ERIC PROGRAM BY GRAHAM FLETCHER (ELORET AND NASA ADVANCED
+        SUPERCOMPUTING DIVISION, AMES RESEARCH CENTER).
+     S,P,D,F,G,L SHELL GENERAL RYS QUADRATURE PROGRAMMED BY
+        MICHEL DUPUIS (PACIFIC NORTHWEST NATIONAL LABORATORY).
+
+          --------------------
+          2 ELECTRON INTEGRALS
+          --------------------
+
+ DIRECT SCF METHOD SKIPS INTEGRAL STORAGE ON DISK.
+ DIRECT TRANSFORMATION SKIPS AO INTEGRAL STORAGE ON DISK.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ CPU     0: STEP CPU TIME=     0.06 TOTAL CPU TIME=          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.1 SECONDS, CPU UTILIZATION IS   134.97%
+
+          --------------------------
+          R-USELIBXC SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         0.2713729483
+     MAXIT =  200     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=T  DEM=F  SOSCF=F
+         DENSITY MATRIX CONVERGENCE THRESHOLD=  2.00E-05
+     COARSE -> FINE DFT GRID SWITCH THRESHOLD=  3.00E-04 (SWITCH IN $DFT)
+                   HF -> DFT SWITCH THRESHOLD=  5.00E-03 (SWOFF IN $DFT)
+     MEMORY REQUIRED FOR RHF ITERS=    216694 WORDS.
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=T,  DIRTHR=  0.00E+00 NITDIR=10
+ SCHWARZ INEQUALITY OVERHEAD:      2485 INTEGRALS, T=        0.00
+
+ DFT CODE IS SWITCHING FROM THE FINE GRID NRAD= 96,  NLEB=  302
+                      TO THE COARSE GRID NRAD0= 24, NLEB0=  110
+
+     EXCHANGE FUNCTIONAL   =LIBXC     
+     CORRELATION FUNCTIONAL=LIBXC     
+     DFT THRESHOLD         =.690E-07
+     GRID CHANGE THRESHOLD =.300E-03
+ FOR AN EULER-MACLAURIN QUADRATURE USING  96 RADIAL POINTS:
+ SMALLEST GAUSSIAN PRIMITIVE EXPONENT=        0.0898900000 OF TYPE -S-
+ ON ATOM NUMBER   1 HAS RADIAL NORMALIZATION=  1.000000
+  LARGEST GAUSSIAN PRIMITIVE EXPONENT=       82.6400000000 OF TYPE -S-
+ ON ATOM NUMBER   1 HAS RADIAL NORMALIZATION=  1.000000
+ DFT IS SWITCHED OFF, PERFORMING PURE SCF UNTIL SWOFF THRESHOLD IS REACHED.
+
+                                                                                   NONZERO     BLOCKS
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR      INTEGRALS    SKIPPED
+   1  0  0       -0.7904290480    -0.7904290480   0.106470989   0.567312521         728005        455
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   2  1  0       -0.9270836582    -0.1366546102   0.043821915   0.077808373         732758        369
+   3  2  0       -0.9323484036    -0.0052647454   0.016467480   0.013454485         716693        701
+   4  3  0       -0.9326712126    -0.0003228090   0.002002680   0.001303021         681980        938
+ CONVERGED TO SWOFF, SO DFT CALCULATION IS NOW SWITCHED ON.
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   5  4  0       -0.9902896980    -0.0576184854   0.027503089   0.064368045         729492        415
+   6  5  0       -0.9931263522    -0.0028366543   0.000440597   0.001462724         721099        695
+   7  6  0       -0.9931281892    -0.0000018370   0.000068011   0.000148840         686363       1301
+ DFT CODE IS SWITCHING BACK TO THE FINE GRID
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   8  7  0       -0.9931034725     0.0000247167   0.000120940   0.000588668         726902        435
+   9  8  0       -0.9931035469    -0.0000000744   0.000021023   0.000033044         690791       1470
+  10  9  0       -0.9931035470    -0.0000000001   0.000008317   0.000016676         621403       2254
+  11 10  0       -0.9931035473    -0.0000000003   0.000002092   0.000004900         378440       4676
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       1.7 SECONDS (       0.2 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.1, LAST ITERATION=       0.3
+     TIME TO SOLVE SCF EQUATIONS=       0.1 SECONDS (       0.0 SEC/ITER)
+
+          ----------------------------
+          DFT-D PARAMETERS AND RESULTS
+          ----------------------------
+ C6 COEFFICIENTS USED:
+       2 C6 FOR ELEMENT   1
+  Z=  1 CN= 0.912     C6(AA)=    3.03
+  Z=  1 CN= 0.000     C6(AA)=    7.59
+
+ #          XYZ [AU]             R0(AA) [ANG.]  CN         C6(AA)     C8(AA)   C10(AA) [AU]
+  1   0.00000   0.00000   0.00000    1  1.091  0.000         7.4        89.4      1323.7
+  2   3.68497   0.00000   0.00000    1  1.091  0.000         7.4        89.4      1323.7
+
+     MOLECULAR C6(AA) [AU] =        29.58
+
+           DFT-D V3(BJ)
+ 
+ WARNING:
+ YOU ARE USING DISPERSION CORRECTION
+ WITH THE UNTESTED DFT FUNCTIONAL: USELIBXC
+ 
+ PARAMETERS
+ S6       :    1.0000
+ RS6      :    1.0000
+ S18      :    1.0000
+ RS18     :    1.0000
+ ALPHA6   :   14.0000
+ ALPHA8   :   16.0000
+ K1-K3    :   16.0000    1.3333    4.0000
+ 
+ EDISP /KCAL,AU:    -0.1060 -0.00016887
+
+ E6    /KCAL :    -0.0618
+ E8    /KCAL :    -0.0442
+ % E8        : 41.71
+
+ FINAL R-USELIBXC ENERGY IS       -0.9932724149 AFTER  11 ITERATIONS
+ DFT EXCHANGE + CORRELATION ENERGY =        -0.3855490415
+ TOTAL ELECTRON NUMBER             =         1.9999999703
+ GRIMME'S DISPERSION ENERGY                     =       -0.0001688676
+ ENERGY WITHOUT GRIMME'S DISPERSION CORRECTION IS       -0.9931035473
+
+ Alpha HOMO=    -8.475756 eV, LUMO=   -4.004255 eV, gap=    4.471501 eV
+
+ LZ VALUE ANALYSIS FOR THE MOS
+ ----------------------------------------
+ MO     1 (    1) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     2 (    2) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     3 (    3) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     4 (    4) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     5 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     6 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     7 (    6) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     8 (    7) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     9 (    7) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    10 (    8) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    11 (    9) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    12 (   10) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    13 (   11) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    14 (   11) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    15 (   12) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    16 (   13) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    17 (   13) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    18 (   14) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    19 (   14) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    20 (   15) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    21 (   15) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    22 (   16) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    23 (   16) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    24 (   17) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    25 (   18) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    26 (   18) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    27 (   19) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    28 (   20) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    29 (   21) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    30 (   22) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    31 (   22) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    32 (   23) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    33 (   23) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    34 (   24) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    35 (   24) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    36 (   25) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    37 (   25) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    38 (   26) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    39 (   26) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    40 (   27) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    41 (   27) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    42 (   28) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    43 (   29) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    44 (   30) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    45 (   31) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    46 (   31) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    47 (   32) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    48 (   33) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    49 (   33) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    50 (   34) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    51 (   35) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    52 (   35) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    53 (   36) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    54 (   36) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    55 (   37) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    56 (   37) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    57 (   38) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    58 (   39) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    59 (   39) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    60 (   40) HAS LZ(WEIGHT)= 0.00(100.0%) 
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -0.3115    -0.1472     0.2031     0.2270     0.3550
+                     A          A          A          A          A   
+    1  H  1  S    0.055865   0.060157   0.056132  -0.061040   0.000000
+    2  H  1  S    0.152898   0.178031  -0.021881  -0.004484   0.000000
+    3  H  1  S    0.277312   0.291644   1.066348  -1.075602   0.000000
+    4  H  1  S    0.230546   0.451547  -1.053750   1.689807   0.000000
+    5  H  1  X    0.000948  -0.001056   0.006968   0.002705   0.000000
+    6  H  1  Y    0.000000   0.000000   0.000000   0.000000   0.000001
+    7  H  1  Z    0.000000   0.000000   0.000000   0.000000   0.045986
+    8  H  1  X   -0.001550  -0.006054  -0.022195  -0.017517   0.000000
+    9  H  1  Y    0.000000   0.000000   0.000000   0.000000  -0.000003
+   10  H  1  Z    0.000000   0.000000   0.000000   0.000000  -0.155799
+   11  H  1  X    0.018324  -0.018937   0.147812   0.057080   0.000000
+   12  H  1  Y    0.000000   0.000000   0.000000   0.000000   0.000016
+   13  H  1  Z    0.000000   0.000000   0.000000   0.000000   0.747310
+   14  H  1 XX   -0.000302  -0.000242   0.001467  -0.002329   0.000000
+   15  H  1 YY    0.000151   0.000121  -0.000734   0.001165   0.000000
+   16  H  1 ZZ    0.000151   0.000121  -0.000734   0.001165   0.000000
+   17  H  1 XY    0.000000   0.000000   0.000000   0.000000  -0.000000
+   18  H  1 XZ    0.000000   0.000000   0.000000   0.000000  -0.002180
+   19  H  1 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   20  H  1 XX    0.002055  -0.000662  -0.001957   0.013175   0.000000
+   21  H  1 YY   -0.001028   0.000331   0.000978  -0.006588   0.000000
+   22  H  1 ZZ   -0.001028   0.000331   0.000978  -0.006588   0.000000
+   23  H  1 XY    0.000000   0.000000   0.000000   0.000000   0.000000
+   24  H  1 XZ    0.000000   0.000000   0.000000   0.000000   0.013603
+   25  H  1 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   26  H  1 XXX   0.000032  -0.000154  -0.001561   0.000122   0.000000
+   27  H  1 YYY   0.000000   0.000000   0.000000   0.000000  -0.000000
+   28  H  1 ZZZ   0.000000   0.000000   0.000000   0.000000  -0.000090
+   29  H  1 XXY   0.000000   0.000000   0.000000   0.000000   0.000000
+   30  H  1 XXZ   0.000000   0.000000   0.000000   0.000000   0.000161
+   31  H  1 YYX  -0.000022   0.000103   0.001047  -0.000082   0.000000
+   32  H  1 YYZ   0.000000   0.000000   0.000000   0.000000  -0.000040
+   33  H  1 ZZX  -0.000022   0.000103   0.001047  -0.000082   0.000000
+   34  H  1 ZZY   0.000000   0.000000   0.000000   0.000000  -0.000000
+   35  H  1 XYZ   0.000000   0.000000   0.000000   0.000000   0.000000
+   36  H  2  S    0.055866  -0.060157   0.056157   0.061020   0.000000
+   37  H  2  S    0.152894  -0.178028  -0.021899   0.004476   0.000000
+   38  H  2  S    0.277316  -0.291648   1.066790   1.075228   0.000000
+   39  H  2  S    0.230550  -0.451543  -1.054423  -1.689417   0.000000
+   40  H  2  X   -0.000949  -0.001056  -0.006967   0.002709   0.000000
+   41  H  2  Y    0.000000   0.000000   0.000000   0.000000   0.000001
+   42  H  2  Z    0.000000   0.000000   0.000000   0.000000   0.045986
+   43  H  2  X    0.001552  -0.006053   0.022187  -0.017530   0.000000
+   44  H  2  Y    0.000000   0.000000   0.000000   0.000000  -0.000003
+   45  H  2  Z    0.000000   0.000000   0.000000   0.000000  -0.155799
+   46  H  2  X   -0.018330  -0.018937  -0.147781   0.057163   0.000000
+   47  H  2  Y    0.000000   0.000000   0.000000   0.000000   0.000016
+   48  H  2  Z    0.000000   0.000000   0.000000   0.000000   0.747309
+   49  H  2 XX   -0.000303   0.000242   0.001468   0.002329   0.000000
+   50  H  2 YY    0.000151  -0.000121  -0.000734  -0.001164   0.000000
+   51  H  2 ZZ    0.000151  -0.000121  -0.000734  -0.001164   0.000000
+   52  H  2 XY    0.000000   0.000000   0.000000   0.000000   0.000000
+   53  H  2 XZ    0.000000   0.000000   0.000000   0.000000   0.002180
+   54  H  2 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   55  H  2 XX    0.002057   0.000661  -0.001963  -0.013176   0.000000
+   56  H  2 YY   -0.001028  -0.000331   0.000981   0.006588   0.000000
+   57  H  2 ZZ   -0.001028  -0.000331   0.000981   0.006588   0.000000
+   58  H  2 XY    0.000000   0.000000   0.000000   0.000000  -0.000000
+   59  H  2 XZ    0.000000   0.000000   0.000000   0.000000  -0.013603
+   60  H  2 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   61  H  2 XXX  -0.000032  -0.000154   0.001561   0.000121   0.000000
+   62  H  2 YYY   0.000000   0.000000   0.000000   0.000000  -0.000000
+   63  H  2 ZZZ   0.000000   0.000000   0.000000   0.000000  -0.000090
+   64  H  2 XXY   0.000000   0.000000   0.000000   0.000000   0.000000
+   65  H  2 XXZ   0.000000   0.000000   0.000000   0.000000   0.000161
+   66  H  2 YYX   0.000022   0.000103  -0.001047  -0.000081   0.000000
+   67  H  2 YYZ   0.000000   0.000000   0.000000   0.000000  -0.000040
+   68  H  2 ZZX   0.000022   0.000103  -0.001047  -0.000081   0.000000
+   69  H  2 ZZY   0.000000   0.000000   0.000000   0.000000  -0.000000
+   70  H  2 XYZ   0.000000   0.000000   0.000000   0.000000   0.000000
+
+                      6          7          8          9         10
+                    0.3550     0.3948     0.5080     0.5080     0.7666
+                     A          A          A          A          A   
+    1  H  1  S    0.000000   0.024640   0.000000   0.000000   0.013033
+    2  H  1  S    0.000000   0.020440   0.000000   0.000000   0.101007
+    3  H  1  S    0.000000   0.354087   0.000000   0.000000  -0.195100
+    4  H  1  S    0.000000  -0.209321   0.000000   0.000000   0.879290
+    5  H  1  X    0.000000  -0.038703   0.000000   0.000000   0.059783
+    6  H  1  Y    0.045986   0.000000   0.000107  -0.048642   0.000000
+    7  H  1  Z   -0.000001   0.000000  -0.048642  -0.000107   0.000000
+    8  H  1  X    0.000000   0.108762   0.000000   0.000000  -0.228338
+    9  H  1  Y   -0.155799   0.000000  -0.000360   0.163568   0.000000
+   10  H  1  Z    0.000003   0.000000   0.163568   0.000360   0.000000
+   11  H  1  X    0.000000  -0.656992   0.000000   0.000000   1.289370
+   12  H  1  Y    0.747310   0.000000   0.001904  -0.864451   0.000000
+   13  H  1  Z   -0.000016   0.000000  -0.864451  -0.001904   0.000000
+   14  H  1 XX    0.000000  -0.006870   0.000000   0.000000   0.000205
+   15  H  1 YY    0.000000   0.003435   0.000000   0.000000  -0.000103
+   16  H  1 ZZ    0.000000   0.003435   0.000000   0.000000  -0.000103
+   17  H  1 XY   -0.002180   0.000000   0.000008  -0.003695   0.000000
+   18  H  1 XZ    0.000000   0.000000  -0.003695  -0.000008   0.000000
+   19  H  1 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   20  H  1 XX    0.000000   0.032260   0.000000   0.000000  -0.024002
+   21  H  1 YY    0.000000  -0.016130   0.000000   0.000000   0.012001
+   22  H  1 ZZ    0.000000  -0.016130   0.000000   0.000000   0.012001
+   23  H  1 XY    0.013603   0.000000  -0.000056   0.025366   0.000000
+   24  H  1 XZ   -0.000000   0.000000   0.025366   0.000056   0.000000
+   25  H  1 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   26  H  1 XXX   0.000000   0.004034   0.000000   0.000000   0.005931
+   27  H  1 YYY  -0.000090   0.000000   0.000000  -0.000081   0.000000
+   28  H  1 ZZZ   0.000000   0.000000  -0.000081  -0.000000   0.000000
+   29  H  1 XXY   0.000161   0.000000  -0.000000   0.000144   0.000000
+   30  H  1 XXZ  -0.000000   0.000000   0.000144   0.000000   0.000000
+   31  H  1 YYX   0.000000  -0.002706   0.000000   0.000000  -0.003979
+   32  H  1 YYZ   0.000000   0.000000  -0.000036  -0.000000   0.000000
+   33  H  1 ZZX   0.000000  -0.002706   0.000000   0.000000  -0.003979
+   34  H  1 ZZY  -0.000040   0.000000   0.000000  -0.000036   0.000000
+   35  H  1 XYZ   0.000000   0.000000   0.000000   0.000000   0.000000
+   36  H  2  S    0.000000   0.024638   0.000000   0.000000  -0.013033
+   37  H  2  S    0.000000   0.020432   0.000000   0.000000  -0.101019
+   38  H  2  S    0.000000   0.354061   0.000000   0.000000   0.195103
+   39  H  2  S    0.000000  -0.209274   0.000000   0.000000  -0.879284
+   40  H  2  X    0.000000   0.038704   0.000000   0.000000   0.059783
+   41  H  2  Y    0.045986   0.000000  -0.000107   0.048642   0.000000
+   42  H  2  Z   -0.000001   0.000000   0.048642   0.000107   0.000000
+   43  H  2  X    0.000000  -0.108765   0.000000   0.000000  -0.228338
+   44  H  2  Y   -0.155799   0.000000   0.000360  -0.163568   0.000000
+   45  H  2  Z    0.000003   0.000000  -0.163568  -0.000360   0.000000
+   46  H  2  X    0.000000   0.657005   0.000000   0.000000   1.289365
+   47  H  2  Y    0.747309   0.000000  -0.001904   0.864453   0.000000
+   48  H  2  Z   -0.000016   0.000000   0.864453   0.001904   0.000000
+   49  H  2 XX    0.000000  -0.006869   0.000000   0.000000  -0.000204
+   50  H  2 YY    0.000000   0.003435   0.000000   0.000000   0.000102
+   51  H  2 ZZ    0.000000   0.003435   0.000000   0.000000   0.000102
+   52  H  2 XY    0.002180   0.000000   0.000008  -0.003695   0.000000
+   53  H  2 XZ   -0.000000   0.000000  -0.003695  -0.000008   0.000000
+   54  H  2 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   55  H  2 XX    0.000000   0.032259   0.000000   0.000000   0.023999
+   56  H  2 YY    0.000000  -0.016130   0.000000   0.000000  -0.011999
+   57  H  2 ZZ    0.000000  -0.016130   0.000000   0.000000  -0.011999
+   58  H  2 XY   -0.013603   0.000000  -0.000056   0.025366   0.000000
+   59  H  2 XZ    0.000000   0.000000   0.025366   0.000056   0.000000
+   60  H  2 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   61  H  2 XXX   0.000000  -0.004034   0.000000   0.000000   0.005932
+   62  H  2 YYY  -0.000090   0.000000  -0.000000   0.000081   0.000000
+   63  H  2 ZZZ   0.000000   0.000000   0.000081   0.000000   0.000000
+   64  H  2 XXY   0.000161   0.000000   0.000000  -0.000144   0.000000
+   65  H  2 XXZ  -0.000000   0.000000  -0.000144  -0.000000   0.000000
+   66  H  2 YYX   0.000000   0.002706   0.000000   0.000000  -0.003979
+   67  H  2 YYZ   0.000000   0.000000   0.000036   0.000000   0.000000
+   68  H  2 ZZX   0.000000   0.002706   0.000000   0.000000  -0.003979
+   69  H  2 ZZY  -0.000040   0.000000  -0.000000   0.000036   0.000000
+   70  H  2 XYZ   0.000000   0.000000   0.000000   0.000000   0.000000
+
+                     11         12         13         14         15
+                    1.2870     1.3970     1.7033     1.7033     1.7114
+                     A          A          A          A          A   
+    1  H  1  S   -0.032832  -0.021402   0.000000   0.000000  -0.002741
+    2  H  1  S   -1.264112  -1.339890   0.000000   0.000000   0.311423
+    3  H  1  S    1.721280   1.936573   0.000000   0.000000  -0.520676
+    4  H  1  S   -0.670787  -0.909137   0.000000   0.000000   0.252412
+    5  H  1  X   -0.020859   0.013965   0.000000   0.000000  -0.064848
+    6  H  1  Y    0.000000   0.000000  -0.000222   0.009628   0.000000
+    7  H  1  Z    0.000000   0.000000   0.009628   0.000222   0.000000
+    8  H  1  X    0.110609  -0.063711   0.000000   0.000000   0.352508
+    9  H  1  Y    0.000000   0.000000   0.002081  -0.090423   0.000000
+   10  H  1  Z    0.000000   0.000000  -0.090423  -0.002081   0.000000
+   11  H  1  X   -0.158792   0.203456   0.000000   0.000000  -0.240145
+   12  H  1  Y    0.000000   0.000000   0.000597  -0.025933   0.000000
+   13  H  1  Z    0.000000   0.000000  -0.025933  -0.000597   0.000000
+   14  H  1 XX   -0.009816   0.016535   0.000000   0.000000  -0.089624
+   15  H  1 YY    0.004908  -0.008268   0.000000   0.000000   0.044812
+   16  H  1 ZZ    0.004908  -0.008268   0.000000   0.000000   0.044812
+   17  H  1 XY    0.000000   0.000000   0.002337  -0.101573   0.000000
+   18  H  1 XZ    0.000000   0.000000  -0.101573  -0.002337   0.000000
+   19  H  1 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   20  H  1 XX    0.086185  -0.127336   0.000000   0.000000   0.678159
+   21  H  1 YY   -0.043092   0.063668   0.000000   0.000000  -0.339080
+   22  H  1 ZZ   -0.043092   0.063668   0.000000   0.000000  -0.339080
+   23  H  1 XY    0.000000   0.000000  -0.016662   0.724103   0.000000
+   24  H  1 XZ    0.000000   0.000000   0.724103   0.016662   0.000000
+   25  H  1 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   26  H  1 XXX   0.000308   0.003334   0.000000   0.000000   0.015101
+   27  H  1 YYY   0.000000   0.000000   0.000166  -0.007235   0.000000
+   28  H  1 ZZZ   0.000000   0.000000  -0.007235  -0.000166   0.000000
+   29  H  1 XXY   0.000000   0.000000  -0.000298   0.012943   0.000000
+   30  H  1 XXZ   0.000000   0.000000   0.012943   0.000298   0.000000
+   31  H  1 YYX  -0.000206  -0.002237   0.000000   0.000000  -0.010130
+   32  H  1 YYZ   0.000000   0.000000  -0.003236  -0.000074   0.000000
+   33  H  1 ZZX  -0.000206  -0.002237   0.000000   0.000000  -0.010130
+   34  H  1 ZZY   0.000000   0.000000   0.000074  -0.003236   0.000000
+   35  H  1 XYZ   0.000000   0.000000   0.000000   0.000000   0.000000
+   36  H  2  S   -0.032834   0.021393   0.000000   0.000000  -0.002742
+   37  H  2  S   -1.264369   1.339665   0.000000   0.000000   0.311389
+   38  H  2  S    1.721637  -1.936251   0.000000   0.000000  -0.520620
+   39  H  2  S   -0.670935   0.909006   0.000000   0.000000   0.252377
+   40  H  2  X    0.020856   0.013971   0.000000   0.000000   0.064847
+   41  H  2  Y    0.000000   0.000000  -0.000222   0.009628   0.000000
+   42  H  2  Z    0.000000   0.000000   0.009628   0.000222   0.000000
+   43  H  2  X   -0.110598  -0.063741   0.000000   0.000000  -0.352501
+   44  H  2  Y    0.000000   0.000000   0.002081  -0.090423   0.000000
+   45  H  2  Z    0.000000   0.000000  -0.090423  -0.002081   0.000000
+   46  H  2  X    0.158742   0.203494   0.000000   0.000000   0.240142
+   47  H  2  Y    0.000000   0.000000   0.000597  -0.025933   0.000000
+   48  H  2  Z    0.000000   0.000000  -0.025933  -0.000597   0.000000
+   49  H  2 XX   -0.009814  -0.016540   0.000000   0.000000  -0.089623
+   50  H  2 YY    0.004907   0.008270   0.000000   0.000000   0.044811
+   51  H  2 ZZ    0.004907   0.008270   0.000000   0.000000   0.044811
+   52  H  2 XY    0.000000   0.000000  -0.002337   0.101573   0.000000
+   53  H  2 XZ    0.000000   0.000000   0.101573   0.002337   0.000000
+   54  H  2 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   55  H  2 XX    0.086165   0.127371   0.000000   0.000000   0.678154
+   56  H  2 YY   -0.043083  -0.063685   0.000000   0.000000  -0.339077
+   57  H  2 ZZ   -0.043083  -0.063685   0.000000   0.000000  -0.339077
+   58  H  2 XY    0.000000   0.000000   0.016662  -0.724102   0.000000
+   59  H  2 XZ    0.000000   0.000000  -0.724102  -0.016662   0.000000
+   60  H  2 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   61  H  2 XXX  -0.000308   0.003334   0.000000   0.000000  -0.015101
+   62  H  2 YYY   0.000000   0.000000   0.000166  -0.007235   0.000000
+   63  H  2 ZZZ   0.000000   0.000000  -0.007235  -0.000166   0.000000
+   64  H  2 XXY   0.000000   0.000000  -0.000298   0.012943   0.000000
+   65  H  2 XXZ   0.000000   0.000000   0.012943   0.000298   0.000000
+   66  H  2 YYX   0.000207  -0.002236   0.000000   0.000000   0.010130
+   67  H  2 YYZ   0.000000   0.000000  -0.003236  -0.000074   0.000000
+   68  H  2 ZZX   0.000207  -0.002236   0.000000   0.000000   0.010130
+   69  H  2 ZZY   0.000000   0.000000   0.000074  -0.003236   0.000000
+   70  H  2 XYZ   0.000000   0.000000   0.000000   0.000000   0.000000
+
+                     16         17         18         19         20
+                    1.8459     1.8459     1.9158     1.9158     2.0629
+                     A          A          A          A          A   
+    1  H  1  S   -0.000000   0.000000   0.000000   0.000000   0.000000
+    2  H  1  S   -0.000000   0.000000  -0.000000   0.000000   0.000000
+    3  H  1  S    0.000000  -0.000000   0.000000  -0.000000   0.000000
+    4  H  1  S   -0.000000   0.000000   0.000000   0.000000   0.000000
+    5  H  1  X    0.000000   0.000000   0.000000   0.000000   0.000000
+    6  H  1  Y    0.000000   0.000000   0.000000   0.000000   0.000005
+    7  H  1  Z    0.000000   0.000000   0.000000   0.000000  -0.087835
+    8  H  1  X   -0.000000  -0.000000  -0.000000  -0.000000   0.000000
+    9  H  1  Y    0.000000   0.000000   0.000000   0.000000  -0.000036
+   10  H  1  Z    0.000000   0.000000   0.000000   0.000000   0.675350
+   11  H  1  X    0.000000   0.000000   0.000000   0.000000   0.000000
+   12  H  1  Y    0.000000   0.000000   0.000000   0.000000   0.000019
+   13  H  1  Z    0.000000   0.000000   0.000000   0.000000  -0.359362
+   14  H  1 XX    0.000000   0.000000   0.000000  -0.000000   0.000000
+   15  H  1 YY   -0.087394  -0.000000   0.000000   0.084674   0.000000
+   16  H  1 ZZ    0.087394   0.000000  -0.000000  -0.084674   0.000000
+   17  H  1 XY    0.000000   0.000000   0.000000   0.000000   0.000004
+   18  H  1 XZ    0.000000   0.000000   0.000000   0.000000  -0.072972
+   19  H  1 YZ    0.000000  -0.100913   0.097773  -0.000000   0.000000
+   20  H  1 XX   -0.000000   0.000000   0.000000   0.000000   0.000000
+   21  H  1 YY    0.655440   0.000000  -0.000000  -0.661923   0.000000
+   22  H  1 ZZ   -0.655440  -0.000000   0.000000   0.661923   0.000000
+   23  H  1 XY    0.000000   0.000000   0.000000   0.000000  -0.000033
+   24  H  1 XZ    0.000000   0.000000   0.000000   0.000000   0.616484
+   25  H  1 YZ   -0.000000   0.756837  -0.764323   0.000000   0.000000
+   26  H  1 XXX  -0.000000   0.000000   0.000000   0.000000   0.000000
+   27  H  1 YYY   0.000000   0.000000   0.000000   0.000000  -0.000000
+   28  H  1 ZZZ   0.000000   0.000000   0.000000   0.000000   0.009131
+   29  H  1 XXY   0.000000   0.000000   0.000000   0.000000   0.000001
+   30  H  1 XXZ   0.000000   0.000000   0.000000   0.000000  -0.016334
+   31  H  1 YYX   0.002163   0.000000   0.000000   0.003874   0.000000
+   32  H  1 YYZ   0.000000   0.000000   0.000000   0.000000   0.004084
+   33  H  1 ZZX  -0.002163   0.000000  -0.000000  -0.003874   0.000000
+   34  H  1 ZZY   0.000000   0.000000   0.000000   0.000000  -0.000000
+   35  H  1 XYZ   0.000000   0.002498   0.004474  -0.000000   0.000000
+   36  H  2  S   -0.000000   0.000000   0.000000  -0.000000   0.000000
+   37  H  2  S   -0.000000   0.000000  -0.000000  -0.000000   0.000000
+   38  H  2  S    0.000000   0.000000   0.000000   0.000000   0.000000
+   39  H  2  S   -0.000000  -0.000000  -0.000000  -0.000000   0.000000
+   40  H  2  X   -0.000000   0.000000   0.000000   0.000000   0.000000
+   41  H  2  Y    0.000000   0.000000   0.000000   0.000000  -0.000005
+   42  H  2  Z    0.000000   0.000000   0.000000   0.000000   0.087834
+   43  H  2  X    0.000000   0.000000   0.000000  -0.000000   0.000000
+   44  H  2  Y    0.000000   0.000000   0.000000   0.000000   0.000036
+   45  H  2  Z    0.000000   0.000000   0.000000   0.000000  -0.675335
+   46  H  2  X   -0.000000   0.000000   0.000000   0.000000   0.000000
+   47  H  2  Y    0.000000   0.000000   0.000000   0.000000  -0.000019
+   48  H  2  Z    0.000000   0.000000   0.000000   0.000000   0.359354
+   49  H  2 XX    0.000000   0.000000   0.000000   0.000000   0.000000
+   50  H  2 YY   -0.087393  -0.000000  -0.000000  -0.084675   0.000000
+   51  H  2 ZZ    0.087393   0.000000   0.000000   0.084675   0.000000
+   52  H  2 XY    0.000000   0.000000   0.000000   0.000000   0.000004
+   53  H  2 XZ    0.000000   0.000000   0.000000   0.000000  -0.072972
+   54  H  2 YZ    0.000000  -0.100912  -0.097774   0.000000   0.000000
+   55  H  2 XX   -0.000000   0.000000   0.000000  -0.000000   0.000000
+   56  H  2 YY    0.655433   0.000000   0.000000   0.661930   0.000000
+   57  H  2 ZZ   -0.655433  -0.000000  -0.000000  -0.661930   0.000000
+   58  H  2 XY    0.000000   0.000000   0.000000   0.000000  -0.000033
+   59  H  2 XZ    0.000000   0.000000   0.000000   0.000000   0.616483
+   60  H  2 YZ   -0.000000   0.756829   0.764331  -0.000000   0.000000
+   61  H  2 XXX   0.000000   0.000000   0.000000   0.000000   0.000000
+   62  H  2 YYY   0.000000   0.000000   0.000000   0.000000   0.000000
+   63  H  2 ZZZ   0.000000   0.000000   0.000000   0.000000  -0.009131
+   64  H  2 XXY   0.000000   0.000000   0.000000   0.000000  -0.000001
+   65  H  2 XXZ   0.000000   0.000000   0.000000   0.000000   0.016334
+   66  H  2 YYX  -0.002163   0.000000   0.000000   0.003874   0.000000
+   67  H  2 YYZ   0.000000   0.000000   0.000000   0.000000  -0.004084
+   68  H  2 ZZX   0.002163   0.000000  -0.000000  -0.003874   0.000000
+   69  H  2 ZZY   0.000000   0.000000   0.000000   0.000000   0.000000
+   70  H  2 XYZ   0.000000  -0.002498   0.004473  -0.000000   0.000000
+
+                     21         22         23         24         25
+                    2.0629     2.1363     2.1363     2.2104     2.2749
+                     A          A          A          A          A   
+    1  H  1  S    0.000000   0.000000   0.000000  -0.012624   0.000000
+    2  H  1  S    0.000000   0.000000   0.000000  -0.115565   0.000000
+    3  H  1  S    0.000000   0.000000   0.000000   0.200913   0.000000
+    4  H  1  S    0.000000   0.000000   0.000000  -0.428690   0.000000
+    5  H  1  X    0.000000   0.000000   0.000000  -0.134821   0.000000
+    6  H  1  Y   -0.087835  -0.000000  -0.147578   0.000000  -0.000007
+    7  H  1  Z   -0.000005  -0.147578   0.000000   0.000000   0.125165
+    8  H  1  X    0.000000   0.000000   0.000000   1.133199   0.000000
+    9  H  1  Y    0.675349   0.000001   1.134978   0.000000   0.000053
+   10  H  1  Z    0.000036   1.134978  -0.000001   0.000000  -0.983786
+   11  H  1  X    0.000000   0.000000   0.000000  -0.914760   0.000000
+   12  H  1  Y   -0.359362  -0.000001  -0.646798   0.000000  -0.000040
+   13  H  1  Z   -0.000019  -0.646798   0.000001   0.000000   0.733845
+   14  H  1 XX    0.000000   0.000000   0.000000  -0.017899   0.000000
+   15  H  1 YY    0.000000   0.000000   0.000000   0.008949   0.000000
+   16  H  1 ZZ    0.000000   0.000000   0.000000   0.008949   0.000000
+   17  H  1 XY   -0.072972  -0.000000  -0.015714   0.000000   0.000003
+   18  H  1 XZ   -0.000004  -0.015714   0.000000   0.000000  -0.053992
+   19  H  1 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   20  H  1 XX    0.000000   0.000000   0.000000   0.198871   0.000000
+   21  H  1 YY    0.000000   0.000000   0.000000  -0.099436   0.000000
+   22  H  1 ZZ    0.000000   0.000000   0.000000  -0.099436   0.000000
+   23  H  1 XY    0.616484   0.000000   0.107423   0.000000  -0.000028
+   24  H  1 XZ    0.000033   0.107423  -0.000000   0.000000   0.510921
+   25  H  1 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   26  H  1 XXX   0.000000   0.000000   0.000000  -0.022910   0.000000
+   27  H  1 YYY   0.009131  -0.000000  -0.001018   0.000000  -0.000001
+   28  H  1 ZZZ   0.000000  -0.001018   0.000000   0.000000   0.010819
+   29  H  1 XXY  -0.016334   0.000000   0.001821   0.000000   0.000001
+   30  H  1 XXZ  -0.000001   0.001821  -0.000000   0.000000  -0.019353
+   31  H  1 YYX   0.000000   0.000000   0.000000   0.015368   0.000000
+   32  H  1 YYZ   0.000000  -0.000455   0.000000   0.000000   0.004838
+   33  H  1 ZZX   0.000000   0.000000   0.000000   0.015368   0.000000
+   34  H  1 ZZY   0.004084  -0.000000  -0.000455   0.000000  -0.000000
+   35  H  1 XYZ   0.000000   0.000000   0.000000   0.000000   0.000000
+   36  H  2  S    0.000000   0.000000   0.000000   0.012624   0.000000
+   37  H  2  S    0.000000   0.000000   0.000000   0.115557   0.000000
+   38  H  2  S    0.000000   0.000000   0.000000  -0.200902   0.000000
+   39  H  2  S    0.000000   0.000000   0.000000   0.428685   0.000000
+   40  H  2  X    0.000000   0.000000   0.000000  -0.134821   0.000000
+   41  H  2  Y    0.087834  -0.000000  -0.147579   0.000000   0.000007
+   42  H  2  Z    0.000005  -0.147579   0.000000   0.000000  -0.125167
+   43  H  2  X    0.000000   0.000000   0.000000   1.133201   0.000000
+   44  H  2  Y   -0.675335   0.000001   1.134981   0.000000  -0.000053
+   45  H  2  Z   -0.000036   1.134981  -0.000001   0.000000   0.983792
+   46  H  2  X    0.000000   0.000000   0.000000  -0.914760   0.000000
+   47  H  2  Y    0.359354  -0.000001  -0.646798   0.000000   0.000040
+   48  H  2  Z    0.000019  -0.646798   0.000001   0.000000  -0.733849
+   49  H  2 XX    0.000000   0.000000   0.000000   0.017899   0.000000
+   50  H  2 YY    0.000000   0.000000   0.000000  -0.008950   0.000000
+   51  H  2 ZZ    0.000000   0.000000   0.000000  -0.008950   0.000000
+   52  H  2 XY   -0.072972   0.000000   0.015715   0.000000   0.000003
+   53  H  2 XZ   -0.000004   0.015715  -0.000000   0.000000  -0.053992
+   54  H  2 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   55  H  2 XX    0.000000   0.000000   0.000000  -0.198875   0.000000
+   56  H  2 YY    0.000000   0.000000   0.000000   0.099438   0.000000
+   57  H  2 ZZ    0.000000   0.000000   0.000000   0.099438   0.000000
+   58  H  2 XY    0.616483  -0.000000  -0.107434   0.000000  -0.000028
+   59  H  2 XZ    0.000033  -0.107434   0.000000   0.000000   0.510921
+   60  H  2 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   61  H  2 XXX   0.000000   0.000000   0.000000  -0.022910   0.000000
+   62  H  2 YYY  -0.009131  -0.000000  -0.001018   0.000000   0.000001
+   63  H  2 ZZZ  -0.000000  -0.001018   0.000000   0.000000  -0.010819
+   64  H  2 XXY   0.016334   0.000000   0.001821   0.000000  -0.000001
+   65  H  2 XXZ   0.000001   0.001821  -0.000000   0.000000   0.019353
+   66  H  2 YYX   0.000000   0.000000   0.000000   0.015368   0.000000
+   67  H  2 YYZ  -0.000000  -0.000455   0.000000   0.000000  -0.004838
+   68  H  2 ZZX   0.000000   0.000000   0.000000   0.015368   0.000000
+   69  H  2 ZZY  -0.004084  -0.000000  -0.000455   0.000000   0.000000
+   70  H  2 XYZ   0.000000   0.000000   0.000000   0.000000   0.000000
+
+                     26         27         28         29         30
+                    2.2749     2.3501     2.8533     5.6383     5.7115
+                     A          A          A          A          A   
+    1  H  1  S    0.000000  -0.017438  -0.020258  -0.006365   0.000000
+    2  H  1  S    0.000000   0.028220  -0.494347   0.031975   0.000000
+    3  H  1  S    0.000000  -0.175654   0.850172  -0.063346   0.000000
+    4  H  1  S    0.000000   0.065960   0.233156   0.036160   0.000000
+    5  H  1  X    0.000000   0.142440   0.100135  -0.086969   0.000000
+    6  H  1  Y    0.125165   0.000000   0.000000   0.000000  -0.000000
+    7  H  1  Z    0.000007   0.000000   0.000000   0.000000   0.001535
+    8  H  1  X    0.000000  -1.159097  -0.713087   0.045667   0.000000
+    9  H  1  Y   -0.983786   0.000000   0.000000   0.000000  -0.000000
+   10  H  1  Z   -0.000053   0.000000   0.000000   0.000000   0.015677
+   11  H  1  X    0.000000   0.669775   1.312907  -0.014229   0.000000
+   12  H  1  Y    0.733845   0.000000   0.000000   0.000000   0.000000
+   13  H  1  Z    0.000040   0.000000   0.000000   0.000000  -0.025834
+   14  H  1 XX    0.000000  -0.006698  -0.081884  -0.038712   0.000000
+   15  H  1 YY    0.000000   0.003349   0.040942   0.019356   0.000000
+   16  H  1 ZZ    0.000000   0.003349   0.040942   0.019356   0.000000
+   17  H  1 XY   -0.053992   0.000000   0.000000   0.000000   0.000001
+   18  H  1 XZ   -0.000003   0.000000   0.000000   0.000000  -0.037572
+   19  H  1 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   20  H  1 XX    0.000000   0.185409   0.945360  -0.027786   0.000000
+   21  H  1 YY    0.000000  -0.092704  -0.472680   0.013893   0.000000
+   22  H  1 ZZ    0.000000  -0.092704  -0.472680   0.013893   0.000000
+   23  H  1 XY    0.510921   0.000000   0.000000   0.000000   0.000000
+   24  H  1 XZ    0.000028   0.000000   0.000000   0.000000  -0.014771
+   25  H  1 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   26  H  1 XXX   0.000000  -0.018608  -0.056256   0.696366   0.000000
+   27  H  1 YYY   0.010819   0.000000   0.000000   0.000000   0.000006
+   28  H  1 ZZZ   0.000001   0.000000   0.000000   0.000000  -0.430608
+   29  H  1 XXY  -0.019353   0.000000   0.000000   0.000000  -0.000011
+   30  H  1 XXZ  -0.000001   0.000000   0.000000   0.000000   0.770295
+   31  H  1 YYX   0.000000   0.012483   0.037738  -0.467136   0.000000
+   32  H  1 YYZ   0.000000   0.000000   0.000000   0.000000  -0.192574
+   33  H  1 ZZX   0.000000   0.012483   0.037738  -0.467136   0.000000
+   34  H  1 ZZY   0.004838   0.000000   0.000000   0.000000   0.000003
+   35  H  1 XYZ   0.000000   0.000000   0.000000   0.000000   0.000000
+   36  H  2  S    0.000000  -0.017439   0.020257  -0.006364   0.000000
+   37  H  2  S    0.000000   0.028217   0.494344   0.031974   0.000000
+   38  H  2  S    0.000000  -0.175648  -0.850168  -0.063345   0.000000
+   39  H  2  S    0.000000   0.065958  -0.233157   0.036159   0.000000
+   40  H  2  X    0.000000  -0.142441   0.100135   0.086968   0.000000
+   41  H  2  Y   -0.125167   0.000000   0.000000   0.000000  -0.000000
+   42  H  2  Z   -0.000007   0.000000   0.000000   0.000000   0.001534
+   43  H  2  X    0.000000   1.159101  -0.713081  -0.045668   0.000000
+   44  H  2  Y    0.983792   0.000000   0.000000   0.000000  -0.000000
+   45  H  2  Z    0.000053   0.000000   0.000000   0.000000   0.015677
+   46  H  2  X    0.000000  -0.669780   1.312903   0.014230   0.000000
+   47  H  2  Y   -0.733849   0.000000   0.000000   0.000000   0.000000
+   48  H  2  Z   -0.000040   0.000000   0.000000   0.000000  -0.025834
+   49  H  2 XX    0.000000  -0.006699   0.081884  -0.038712   0.000000
+   50  H  2 YY    0.000000   0.003350  -0.040942   0.019356   0.000000
+   51  H  2 ZZ    0.000000   0.003350  -0.040942   0.019356   0.000000
+   52  H  2 XY   -0.053992   0.000000   0.000000   0.000000  -0.000001
+   53  H  2 XZ   -0.000003   0.000000   0.000000   0.000000   0.037572
+   54  H  2 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   55  H  2 XX    0.000000   0.185414  -0.945359  -0.027786   0.000000
+   56  H  2 YY    0.000000  -0.092707   0.472680   0.013893   0.000000
+   57  H  2 ZZ    0.000000  -0.092707   0.472680   0.013893   0.000000
+   58  H  2 XY    0.510921   0.000000   0.000000   0.000000  -0.000000
+   59  H  2 XZ    0.000028   0.000000   0.000000   0.000000   0.014771
+   60  H  2 YZ    0.000000  -0.000000   0.000000   0.000000   0.000000
+   61  H  2 XXX   0.000000   0.018609  -0.056256  -0.696364   0.000000
+   62  H  2 YYY  -0.010819   0.000000   0.000000   0.000000   0.000006
+   63  H  2 ZZZ  -0.000001   0.000000   0.000000   0.000000  -0.430605
+   64  H  2 XXY   0.019353   0.000000   0.000000   0.000000  -0.000011
+   65  H  2 XXZ   0.000001   0.000000   0.000000   0.000000   0.770291
+   66  H  2 YYX   0.000000  -0.012483   0.037738   0.467135   0.000000
+   67  H  2 YYZ  -0.000000   0.000000   0.000000   0.000000  -0.192573
+   68  H  2 ZZX   0.000000  -0.012483   0.037738   0.467135   0.000000
+   69  H  2 ZZY  -0.004838   0.000000   0.000000   0.000000   0.000003
+   70  H  2 XYZ   0.000000   0.000000   0.000000   0.000000   0.000000
+
+                     31         32         33         34         35
+                    5.7115     5.7732     5.7732     5.7885     5.7885
+                     A          A          A          A          A   
+    1  H  1  S    0.000000  -0.000000   0.000000   0.000000   0.000000
+    2  H  1  S    0.000000   0.000000   0.000000   0.000000   0.000000
+    3  H  1  S    0.000000   0.000000   0.000000   0.000000   0.000000
+    4  H  1  S    0.000000  -0.000000   0.000000   0.000000   0.000000
+    5  H  1  X    0.000000   0.000000   0.000000   0.000000   0.000000
+    6  H  1  Y    0.001535   0.000000   0.000000   0.000000   0.000000
+    7  H  1  Z    0.000000   0.000000   0.000000   0.000000  -0.000000
+    8  H  1  X    0.000000  -0.000000   0.000000   0.000000   0.000000
+    9  H  1  Y    0.015677   0.000000   0.000000  -0.000000  -0.000000
+   10  H  1  Z    0.000000   0.000000   0.000000  -0.000000   0.000000
+   11  H  1  X    0.000000   0.000000   0.000000   0.000000   0.000000
+   12  H  1  Y   -0.025834   0.000000   0.000000   0.000000   0.000000
+   13  H  1  Z   -0.000000   0.000000   0.000000   0.000000  -0.000000
+   14  H  1 XX    0.000000   0.000000   0.000000   0.000000   0.000000
+   15  H  1 YY    0.000000  -0.008995   0.000000   0.000000   0.000000
+   16  H  1 ZZ    0.000000   0.008995  -0.000000   0.000000   0.000000
+   17  H  1 XY   -0.037572   0.000000   0.000000   0.000000   0.000000
+   18  H  1 XZ   -0.000001   0.000000   0.000000   0.000000  -0.000000
+   19  H  1 YZ    0.000000  -0.000000  -0.010387   0.000000   0.000000
+   20  H  1 XX    0.000000   0.000000   0.000000   0.000000   0.000000
+   21  H  1 YY    0.000000  -0.001052   0.000000   0.000000   0.000000
+   22  H  1 ZZ    0.000000   0.001052   0.000000   0.000000   0.000000
+   23  H  1 XY   -0.014771   0.000000   0.000000  -0.000000  -0.000000
+   24  H  1 XZ   -0.000000   0.000000   0.000000  -0.000000   0.000000
+   25  H  1 YZ    0.000000   0.000000  -0.001215   0.000000   0.000000
+   26  H  1 XXX   0.000000  -0.000000   0.000000   0.000000   0.000000
+   27  H  1 YYY  -0.430608   0.000000   0.000000  -0.074289  -0.554224
+   28  H  1 ZZZ  -0.000006   0.000000   0.000000  -0.554224   0.074289
+   29  H  1 XXY   0.770295   0.000000   0.000000   0.000000   0.000000
+   30  H  1 XXZ   0.000011   0.000000   0.000000   0.000000  -0.000000
+   31  H  1 YYX   0.000000   0.611895  -0.000000   0.000000   0.000000
+   32  H  1 YYZ  -0.000003   0.000000   0.000000   0.743569  -0.099669
+   33  H  1 ZZX   0.000000  -0.611895   0.000000   0.000000   0.000000
+   34  H  1 ZZY  -0.192574   0.000000   0.000000   0.099669   0.743569
+   35  H  1 XYZ   0.000000   0.000000   0.706556   0.000000   0.000000
+   36  H  2  S    0.000000  -0.000000   0.000000   0.000000   0.000000
+   37  H  2  S    0.000000   0.000000   0.000000   0.000000   0.000000
+   38  H  2  S    0.000000   0.000000   0.000000   0.000000   0.000000
+   39  H  2  S    0.000000  -0.000000   0.000000   0.000000   0.000000
+   40  H  2  X    0.000000  -0.000000   0.000000   0.000000   0.000000
+   41  H  2  Y    0.001534   0.000000   0.000000   0.000000   0.000000
+   42  H  2  Z    0.000000   0.000000   0.000000   0.000000  -0.000000
+   43  H  2  X    0.000000   0.000000   0.000000   0.000000   0.000000
+   44  H  2  Y    0.015677   0.000000   0.000000  -0.000000  -0.000000
+   45  H  2  Z    0.000000   0.000000   0.000000  -0.000000   0.000000
+   46  H  2  X    0.000000  -0.000000   0.000000   0.000000   0.000000
+   47  H  2  Y   -0.025834   0.000000   0.000000  -0.000000  -0.000000
+   48  H  2  Z   -0.000000   0.000000   0.000000  -0.000000   0.000000
+   49  H  2 XX    0.000000   0.000000   0.000000   0.000000   0.000000
+   50  H  2 YY    0.000000  -0.008996   0.000000   0.000000   0.000000
+   51  H  2 ZZ    0.000000   0.008996  -0.000000   0.000000   0.000000
+   52  H  2 XY    0.037572   0.000000   0.000000  -0.000000  -0.000000
+   53  H  2 XZ    0.000001   0.000000   0.000000  -0.000000   0.000000
+   54  H  2 YZ    0.000000  -0.000000  -0.010387   0.000000   0.000000
+   55  H  2 XX    0.000000   0.000000   0.000000   0.000000   0.000000
+   56  H  2 YY    0.000000  -0.001053   0.000000   0.000000   0.000000
+   57  H  2 ZZ    0.000000   0.001053   0.000000   0.000000   0.000000
+   58  H  2 XY    0.014771   0.000000   0.000000   0.000000   0.000000
+   59  H  2 XZ    0.000000   0.000000   0.000000   0.000000  -0.000000
+   60  H  2 YZ    0.000000   0.000000  -0.001216   0.000000   0.000000
+   61  H  2 XXX   0.000000   0.000000   0.000000   0.000000   0.000000
+   62  H  2 YYY  -0.430605   0.000000   0.000000  -0.074240  -0.553858
+   63  H  2 ZZZ  -0.000006   0.000000   0.000000  -0.553858   0.074240
+   64  H  2 XXY   0.770291   0.000000   0.000000   0.000000   0.000000
+   65  H  2 XXZ   0.000011   0.000000   0.000000   0.000000  -0.000000
+   66  H  2 YYX   0.000000  -0.611874   0.000000   0.000000   0.000000
+   67  H  2 YYZ  -0.000003   0.000000   0.000000   0.743078  -0.099603
+   68  H  2 ZZX   0.000000   0.611874  -0.000000   0.000000   0.000000
+   69  H  2 ZZY  -0.192573   0.000000   0.000000   0.099603   0.743078
+   70  H  2 XYZ   0.000000  -0.000000  -0.706531   0.000000   0.000000
+
+                     36         37         38         39         40
+                    5.7905     5.7905     5.8053     5.8053     5.8944
+                     A          A          A          A          A   
+    1  H  1  S    0.000000   0.000000   0.000000   0.000000   0.000000
+    2  H  1  S    0.000000   0.000000  -0.000000   0.000000   0.000000
+    3  H  1  S    0.000000   0.000000  -0.000000   0.000000   0.000000
+    4  H  1  S    0.000000   0.000000  -0.000000   0.000000   0.000000
+    5  H  1  X    0.000000   0.000000  -0.000000   0.000000   0.000000
+    6  H  1  Y   -0.000000  -0.000000   0.000000   0.000000  -0.000003
+    7  H  1  Z   -0.000000   0.000000   0.000000   0.000000   0.019777
+    8  H  1  X    0.000000   0.000000   0.000000   0.000000   0.000000
+    9  H  1  Y    0.000000   0.000000   0.000000   0.000000  -0.000003
+   10  H  1  Z    0.000000  -0.000000   0.000000   0.000000   0.017664
+   11  H  1  X    0.000000   0.000000  -0.000000   0.000000   0.000000
+   12  H  1  Y   -0.000000  -0.000000   0.000000   0.000000   0.000007
+   13  H  1  Z   -0.000000   0.000000   0.000000   0.000000  -0.047902
+   14  H  1 XX    0.000000   0.000000  -0.000000   0.000000   0.000000
+   15  H  1 YY    0.000000   0.000000  -0.005059   0.000000   0.000000
+   16  H  1 ZZ    0.000000   0.000000   0.005059  -0.000000   0.000000
+   17  H  1 XY   -0.000000  -0.000000   0.000000   0.000000   0.000008
+   18  H  1 XZ   -0.000000   0.000000   0.000000   0.000000  -0.051197
+   19  H  1 YZ    0.000000   0.000000   0.000000   0.005842   0.000000
+   20  H  1 XX    0.000000   0.000000  -0.000000   0.000000   0.000000
+   21  H  1 YY    0.000000   0.000000  -0.004709   0.000000   0.000000
+   22  H  1 ZZ    0.000000   0.000000   0.004709  -0.000000   0.000000
+   23  H  1 XY    0.000000   0.000000   0.000000   0.000000   0.000004
+   24  H  1 XZ    0.000000  -0.000000   0.000000   0.000000  -0.026411
+   25  H  1 YZ    0.000000   0.000000   0.000000   0.005437   0.000000
+   26  H  1 XXX   0.000000   0.000000  -0.000000   0.000000   0.000000
+   27  H  1 YYY   0.221366   0.513142   0.000000   0.000000  -0.000065
+   28  H  1 ZZZ   0.513142  -0.221366   0.000000   0.000000   0.433583
+   29  H  1 XXY  -0.000000  -0.000000   0.000000   0.000000   0.000116
+   30  H  1 XXZ  -0.000000   0.000000   0.000000   0.000000  -0.775617
+   31  H  1 YYX   0.000000   0.000000  -0.612742   0.000000   0.000000
+   32  H  1 YYZ  -0.688452   0.296993   0.000000   0.000000   0.193904
+   33  H  1 ZZX   0.000000   0.000000   0.612742  -0.000000   0.000000
+   34  H  1 ZZY  -0.296993  -0.688452   0.000000   0.000000  -0.000029
+   35  H  1 XYZ   0.000000   0.000000   0.000000   0.707534   0.000000
+   36  H  2  S    0.000000   0.000000  -0.000000   0.000000   0.000000
+   37  H  2  S    0.000000   0.000000   0.000000   0.000000   0.000000
+   38  H  2  S    0.000000   0.000000   0.000000   0.000000   0.000000
+   39  H  2  S    0.000000   0.000000   0.000000   0.000000   0.000000
+   40  H  2  X    0.000000   0.000000  -0.000000   0.000000   0.000000
+   41  H  2  Y    0.000000   0.000000   0.000000   0.000000   0.000003
+   42  H  2  Z    0.000000  -0.000000   0.000000   0.000000  -0.019777
+   43  H  2  X    0.000000   0.000000   0.000000   0.000000   0.000000
+   44  H  2  Y   -0.000000  -0.000000   0.000000   0.000000   0.000003
+   45  H  2  Z   -0.000000   0.000000   0.000000   0.000000  -0.017664
+   46  H  2  X    0.000000   0.000000  -0.000000   0.000000   0.000000
+   47  H  2  Y    0.000000   0.000000   0.000000   0.000000  -0.000007
+   48  H  2  Z    0.000000  -0.000000   0.000000   0.000000   0.047902
+   49  H  2 XX    0.000000   0.000000   0.000000   0.000000   0.000000
+   50  H  2 YY    0.000000   0.000000   0.005059  -0.000000   0.000000
+   51  H  2 ZZ    0.000000   0.000000  -0.005059   0.000000   0.000000
+   52  H  2 XY   -0.000000  -0.000000   0.000000   0.000000   0.000008
+   53  H  2 XZ   -0.000000   0.000000   0.000000   0.000000  -0.051197
+   54  H  2 YZ    0.000000   0.000000  -0.000000  -0.005841   0.000000
+   55  H  2 XX    0.000000   0.000000   0.000000   0.000000   0.000000
+   56  H  2 YY    0.000000   0.000000   0.004709  -0.000000   0.000000
+   57  H  2 ZZ    0.000000   0.000000  -0.004709   0.000000   0.000000
+   58  H  2 XY    0.000000   0.000000   0.000000   0.000000   0.000004
+   59  H  2 XZ    0.000000  -0.000000   0.000000   0.000000  -0.026411
+   60  H  2 YZ    0.000000   0.000000  -0.000000  -0.005437   0.000000
+   61  H  2 XXX   0.000000   0.000000  -0.000000   0.000000   0.000000
+   62  H  2 YYY  -0.221512  -0.513481   0.000000   0.000000   0.000065
+   63  H  2 ZZZ  -0.513481   0.221512   0.000000   0.000000  -0.433585
+   64  H  2 XXY   0.000000   0.000000   0.000000   0.000000  -0.000116
+   65  H  2 XXZ   0.000000  -0.000000   0.000000   0.000000   0.775621
+   66  H  2 YYX   0.000000   0.000000  -0.612764   0.000000   0.000000
+   67  H  2 YYZ   0.688907  -0.297189   0.000000   0.000000  -0.193905
+   68  H  2 ZZX   0.000000   0.000000   0.612764  -0.000000   0.000000
+   69  H  2 ZZY   0.297189   0.688907   0.000000   0.000000   0.000029
+   70  H  2 XYZ   0.000000   0.000000   0.000000   0.707559   0.000000
+
+                     41         42         43         44         45
+                    5.8944     6.0775     6.9524     7.0179     7.4114
+                     A          A          A          A          A   
+    1  H  1  S    0.000000  -0.142921  -1.144040  -1.132238   0.000000
+    2  H  1  S    0.000000   0.078259   1.506464   1.585002   0.000000
+    3  H  1  S    0.000000   0.068093  -1.003489  -1.185804   0.000000
+    4  H  1  S    0.000000   0.073243   0.322169   0.428519   0.000000
+    5  H  1  X    0.000000   0.051554   0.141059  -0.050821   0.000000
+    6  H  1  Y    0.019777   0.000000   0.000000   0.000000  -0.000015
+    7  H  1  Z    0.000003   0.000000   0.000000   0.000000   1.155517
+    8  H  1  X    0.000000  -0.131726  -0.114799   0.082796   0.000000
+    9  H  1  Y    0.017664   0.000000   0.000000   0.000000   0.000014
+   10  H  1  Z    0.000003   0.000000   0.000000   0.000000  -1.067935
+   11  H  1  X    0.000000   0.254510   0.062625  -0.167133   0.000000
+   12  H  1  Y   -0.047902   0.000000   0.000000   0.000000  -0.000005
+   13  H  1  Z   -0.000007   0.000000   0.000000   0.000000   0.358597
+   14  H  1 XX    0.000000   0.136945  -0.008662  -0.161182   0.000000
+   15  H  1 YY    0.000000  -0.068473   0.004331   0.080591   0.000000
+   16  H  1 ZZ    0.000000  -0.068473   0.004331   0.080591   0.000000
+   17  H  1 XY   -0.051197   0.000000   0.000000   0.000000   0.000001
+   18  H  1 XZ   -0.000008   0.000000   0.000000   0.000000  -0.052107
+   19  H  1 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   20  H  1 XX    0.000000   0.090801   0.027897  -0.017540   0.000000
+   21  H  1 YY    0.000000  -0.045400  -0.013949   0.008770   0.000000
+   22  H  1 ZZ    0.000000  -0.045400  -0.013949   0.008770   0.000000
+   23  H  1 XY   -0.026411   0.000000   0.000000   0.000000  -0.000000
+   24  H  1 XZ   -0.000004   0.000000   0.000000   0.000000   0.009652
+   25  H  1 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   26  H  1 XXX   0.000000   0.694319   0.010341  -0.071474   0.000000
+   27  H  1 YYY   0.433583   0.000000   0.000000   0.000000  -0.000000
+   28  H  1 ZZZ   0.000065   0.000000   0.000000   0.000000   0.006032
+   29  H  1 XXY  -0.775617   0.000000   0.000000   0.000000   0.000000
+   30  H  1 XXZ  -0.000116   0.000000   0.000000   0.000000  -0.010790
+   31  H  1 YYX   0.000000  -0.465763  -0.006937   0.047946   0.000000
+   32  H  1 YYZ   0.000029   0.000000   0.000000   0.000000   0.002697
+   33  H  1 ZZX   0.000000  -0.465763  -0.006937   0.047946   0.000000
+   34  H  1 ZZY   0.193904   0.000000   0.000000   0.000000  -0.000000
+   35  H  1 XYZ   0.000000   0.000000   0.000000   0.000000   0.000000
+   36  H  2  S    0.000000   0.142922  -1.144213   1.132063   0.000000
+   37  H  2  S    0.000000  -0.078260   1.506701  -1.584769   0.000000
+   38  H  2  S    0.000000  -0.068092  -1.003663   1.185645   0.000000
+   39  H  2  S    0.000000  -0.073244   0.322228  -0.428466   0.000000
+   40  H  2  X    0.000000   0.051553  -0.141046  -0.050836   0.000000
+   41  H  2  Y   -0.019777   0.000000   0.000000   0.000000  -0.000015
+   42  H  2  Z   -0.000003   0.000000   0.000000   0.000000   1.155483
+   43  H  2  X    0.000000  -0.131726   0.114781   0.082808   0.000000
+   44  H  2  Y   -0.017664   0.000000   0.000000   0.000000   0.000014
+   45  H  2  Z   -0.000003   0.000000   0.000000   0.000000  -1.067903
+   46  H  2  X    0.000000   0.254510  -0.062596  -0.167142   0.000000
+   47  H  2  Y    0.047902   0.000000   0.000000   0.000000  -0.000005
+   48  H  2  Z    0.000007   0.000000   0.000000   0.000000   0.358585
+   49  H  2 XX    0.000000  -0.136945  -0.008685   0.161180   0.000000
+   50  H  2 YY    0.000000   0.068472   0.004342  -0.080590   0.000000
+   51  H  2 ZZ    0.000000   0.068472   0.004342  -0.080590   0.000000
+   52  H  2 XY   -0.051197   0.000000   0.000000   0.000000  -0.000001
+   53  H  2 XZ   -0.000008   0.000000   0.000000   0.000000   0.052109
+   54  H  2 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   55  H  2 XX    0.000000  -0.090801   0.027894   0.017545   0.000000
+   56  H  2 YY    0.000000   0.045400  -0.013947  -0.008772   0.000000
+   57  H  2 ZZ    0.000000   0.045400  -0.013947  -0.008772   0.000000
+   58  H  2 XY   -0.026411   0.000000   0.000000   0.000000   0.000000
+   59  H  2 XZ   -0.000004   0.000000   0.000000   0.000000  -0.009652
+   60  H  2 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   61  H  2 XXX   0.000000   0.694321  -0.010329  -0.071475   0.000000
+   62  H  2 YYY  -0.433585   0.000000   0.000000   0.000000  -0.000000
+   63  H  2 ZZZ  -0.000065   0.000000   0.000000   0.000000   0.006032
+   64  H  2 XXY   0.775621   0.000000   0.000000   0.000000   0.000000
+   65  H  2 XXZ   0.000116   0.000000   0.000000   0.000000  -0.010791
+   66  H  2 YYX   0.000000  -0.465764   0.006929   0.047947   0.000000
+   67  H  2 YYZ  -0.000029   0.000000   0.000000   0.000000   0.002698
+   68  H  2 ZZX   0.000000  -0.465764   0.006929   0.047947   0.000000
+   69  H  2 ZZY  -0.193905   0.000000   0.000000   0.000000  -0.000000
+   70  H  2 XYZ   0.000000   0.000000   0.000000   0.000000   0.000000
+
+                     46         47         48         49         50
+                    7.4114     7.4377     7.4577     7.4577     7.5873
+                     A          A          A          A          A   
+    1  H  1  S    0.000000   0.137133   0.000000   0.000000   0.044460
+    2  H  1  S    0.000000  -0.195443   0.000000   0.000000  -0.044441
+    3  H  1  S    0.000000   0.105601   0.000000   0.000000   0.012414
+    4  H  1  S    0.000000  -0.044097   0.000000   0.000000  -0.237817
+    5  H  1  X    0.000000   1.034278   0.000000   0.000000  -1.183107
+    6  H  1  Y    1.155517   0.000000   0.000146  -1.159481   0.000000
+    7  H  1  Z    0.000015   0.000000  -1.159481  -0.000146   0.000000
+    8  H  1  X    0.000000  -1.003160   0.000000   0.000000   1.186439
+    9  H  1  Y   -1.067935   0.000000  -0.000138   1.102841   0.000000
+   10  H  1  Z   -0.000014   0.000000   1.102841   0.000138   0.000000
+   11  H  1  X    0.000000   0.363019   0.000000   0.000000  -0.652576
+   12  H  1  Y    0.358597   0.000000   0.000054  -0.431971   0.000000
+   13  H  1  Z    0.000005   0.000000  -0.431971  -0.000054   0.000000
+   14  H  1 XX    0.000000   0.371130   0.000000   0.000000   0.008378
+   15  H  1 YY    0.000000  -0.185565   0.000000   0.000000  -0.004189
+   16  H  1 ZZ    0.000000  -0.185565   0.000000   0.000000  -0.004189
+   17  H  1 XY   -0.052107   0.000000   0.000012  -0.092071   0.000000
+   18  H  1 XZ   -0.000001   0.000000  -0.092071  -0.000012   0.000000
+   19  H  1 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   20  H  1 XX    0.000000  -0.149154   0.000000   0.000000  -0.056587
+   21  H  1 YY    0.000000   0.074577   0.000000   0.000000   0.028294
+   22  H  1 ZZ    0.000000   0.074577   0.000000   0.000000   0.028294
+   23  H  1 XY    0.009652   0.000000  -0.000003   0.021686   0.000000
+   24  H  1 XZ    0.000000   0.000000   0.021686   0.000003   0.000000
+   25  H  1 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   26  H  1 XXX   0.000000   0.082006   0.000000   0.000000   0.021773
+   27  H  1 YYY   0.006032   0.000000  -0.000001   0.009606   0.000000
+   28  H  1 ZZZ   0.000000   0.000000   0.009606   0.000001   0.000000
+   29  H  1 XXY  -0.010790   0.000000   0.000002  -0.017183   0.000000
+   30  H  1 XXZ  -0.000000   0.000000  -0.017183  -0.000002   0.000000
+   31  H  1 YYX   0.000000  -0.055011   0.000000   0.000000  -0.014606
+   32  H  1 YYZ   0.000000   0.000000   0.004296   0.000001   0.000000
+   33  H  1 ZZX   0.000000  -0.055011   0.000000   0.000000  -0.014606
+   34  H  1 ZZY   0.002697   0.000000  -0.000001   0.004296   0.000000
+   35  H  1 XYZ   0.000000   0.000000   0.000000   0.000000   0.000000
+   36  H  2  S    0.000000   0.137140   0.000000   0.000000  -0.044465
+   37  H  2  S    0.000000  -0.195452   0.000000   0.000000   0.044447
+   38  H  2  S    0.000000   0.105607   0.000000   0.000000  -0.012418
+   39  H  2  S    0.000000  -0.044099   0.000000   0.000000   0.237819
+   40  H  2  X    0.000000  -1.034273   0.000000   0.000000  -1.183112
+   41  H  2  Y    1.155483   0.000000  -0.000146   1.159514   0.000000
+   42  H  2  Z    0.000015   0.000000   1.159514   0.000146   0.000000
+   43  H  2  X    0.000000   1.003155   0.000000   0.000000   1.186444
+   44  H  2  Y   -1.067903   0.000000   0.000138  -1.102872   0.000000
+   45  H  2  Z   -0.000014   0.000000  -1.102872  -0.000138   0.000000
+   46  H  2  X    0.000000  -0.363017   0.000000   0.000000  -0.652577
+   47  H  2  Y    0.358585   0.000000  -0.000054   0.431982   0.000000
+   48  H  2  Z    0.000005   0.000000   0.431982   0.000054   0.000000
+   49  H  2 XX    0.000000   0.371131   0.000000   0.000000  -0.008377
+   50  H  2 YY    0.000000  -0.185566   0.000000   0.000000   0.004188
+   51  H  2 ZZ    0.000000  -0.185566   0.000000   0.000000   0.004188
+   52  H  2 XY    0.052109   0.000000   0.000012  -0.092069   0.000000
+   53  H  2 XZ    0.000001   0.000000  -0.092069  -0.000012   0.000000
+   54  H  2 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   55  H  2 XX    0.000000  -0.149154   0.000000   0.000000   0.056587
+   56  H  2 YY    0.000000   0.074577   0.000000   0.000000  -0.028293
+   57  H  2 ZZ    0.000000   0.074577   0.000000   0.000000  -0.028293
+   58  H  2 XY   -0.009652   0.000000  -0.000003   0.021686   0.000000
+   59  H  2 XZ   -0.000000   0.000000   0.021686   0.000003   0.000000
+   60  H  2 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   61  H  2 XXX   0.000000  -0.082007   0.000000   0.000000   0.021772
+   62  H  2 YYY   0.006032   0.000000   0.000001  -0.009605   0.000000
+   63  H  2 ZZZ   0.000000   0.000000  -0.009605  -0.000001   0.000000
+   64  H  2 XXY  -0.010791   0.000000  -0.000002   0.017183   0.000000
+   65  H  2 XXZ  -0.000000   0.000000   0.017183   0.000002   0.000000
+   66  H  2 YYX   0.000000   0.055012   0.000000   0.000000  -0.014605
+   67  H  2 YYZ   0.000000   0.000000  -0.004296  -0.000001   0.000000
+   68  H  2 ZZX   0.000000   0.055012   0.000000   0.000000  -0.014605
+   69  H  2 ZZY   0.002698   0.000000   0.000001  -0.004296   0.000000
+   70  H  2 XYZ   0.000000   0.000000   0.000000   0.000000   0.000000
+
+                     51         52         53         54         55
+                    7.7041     7.7041     7.7746     7.7746     7.8227
+                     A          A          A          A          A   
+    1  H  1  S    0.000000   0.000000   0.000000   0.000000   0.000000
+    2  H  1  S    0.000000   0.000000   0.000000  -0.000000   0.000000
+    3  H  1  S    0.000000   0.000000   0.000000   0.000000   0.000000
+    4  H  1  S    0.000000   0.000000   0.000000   0.000000   0.000000
+    5  H  1  X    0.000000   0.000000  -0.000000   0.000000  -0.000000
+    6  H  1  Y    0.081206   0.002267   0.000000   0.000000   0.000000
+    7  H  1  Z   -0.002267   0.081206   0.000000   0.000000   0.000000
+    8  H  1  X    0.000000   0.000000   0.000000  -0.000000   0.000000
+    9  H  1  Y   -0.091279  -0.002548   0.000000   0.000000   0.000000
+   10  H  1  Z    0.002548  -0.091279   0.000000   0.000000   0.000000
+   11  H  1  X    0.000000   0.000000  -0.000000   0.000000   0.000000
+   12  H  1  Y    0.057170   0.001596   0.000000   0.000000   0.000000
+   13  H  1  Z   -0.001596   0.057170   0.000000   0.000000   0.000000
+   14  H  1 XX    0.000000   0.000000   0.000000  -0.000000   0.000000
+   15  H  1 YY    0.000000   0.000000  -0.000000  -0.747954  -0.000000
+   16  H  1 ZZ    0.000000   0.000000   0.000000   0.747954   0.000000
+   17  H  1 XY    0.851472   0.023772   0.000000   0.000000   0.000000
+   18  H  1 XZ   -0.023772   0.851472   0.000000   0.000000   0.000000
+   19  H  1 YZ    0.000000   0.000000   0.863663  -0.000000  -0.868119
+   20  H  1 XX    0.000000   0.000000  -0.000000   0.000000   0.000000
+   21  H  1 YY    0.000000   0.000000   0.000000   0.362343   0.000000
+   22  H  1 ZZ    0.000000   0.000000  -0.000000  -0.362343  -0.000000
+   23  H  1 XY   -0.388525  -0.010847   0.000000   0.000000   0.000000
+   24  H  1 XZ    0.010847  -0.388525   0.000000   0.000000   0.000000
+   25  H  1 YZ    0.000000   0.000000  -0.418397   0.000000   0.433194
+   26  H  1 XXX   0.000000   0.000000   0.000000  -0.000000   0.000000
+   27  H  1 YYY  -0.027641  -0.000772   0.000000   0.000000   0.000000
+   28  H  1 ZZZ   0.000772  -0.027641   0.000000   0.000000   0.000000
+   29  H  1 XXY   0.049446   0.001380   0.000000   0.000000   0.000000
+   30  H  1 XXZ  -0.001380   0.049446   0.000000   0.000000   0.000000
+   31  H  1 YYX   0.000000   0.000000  -0.000000  -0.009737   0.000000
+   32  H  1 YYZ   0.000345  -0.012361   0.000000   0.000000   0.000000
+   33  H  1 ZZX   0.000000   0.000000   0.000000   0.009737   0.000000
+   34  H  1 ZZY  -0.012361  -0.000345   0.000000   0.000000   0.000000
+   35  H  1 XYZ   0.000000   0.000000   0.011244  -0.000000   0.007788
+   36  H  2  S    0.000000   0.000000   0.000000   0.000000   0.000000
+   37  H  2  S    0.000000   0.000000   0.000000  -0.000000   0.000000
+   38  H  2  S    0.000000   0.000000   0.000000   0.000000   0.000000
+   39  H  2  S    0.000000   0.000000   0.000000  -0.000000   0.000000
+   40  H  2  X    0.000000   0.000000   0.000000   0.000000   0.000000
+   41  H  2  Y    0.081208   0.002267   0.000000   0.000000   0.000000
+   42  H  2  Z   -0.002267   0.081208   0.000000   0.000000   0.000000
+   43  H  2  X    0.000000   0.000000  -0.000000  -0.000000   0.000000
+   44  H  2  Y   -0.091282  -0.002548   0.000000   0.000000   0.000000
+   45  H  2  Z    0.002548  -0.091282   0.000000   0.000000   0.000000
+   46  H  2  X    0.000000   0.000000   0.000000   0.000000   0.000000
+   47  H  2  Y    0.057172   0.001596   0.000000   0.000000   0.000000
+   48  H  2  Z   -0.001596   0.057172   0.000000   0.000000   0.000000
+   49  H  2 XX    0.000000   0.000000   0.000000  -0.000000   0.000000
+   50  H  2 YY    0.000000   0.000000  -0.000000  -0.747930   0.000000
+   51  H  2 ZZ    0.000000   0.000000   0.000000   0.747930  -0.000000
+   52  H  2 XY   -0.851467  -0.023772   0.000000   0.000000   0.000000
+   53  H  2 XZ    0.023772  -0.851467   0.000000   0.000000   0.000000
+   54  H  2 YZ    0.000000   0.000000   0.863635  -0.000000   0.868146
+   55  H  2 XX    0.000000   0.000000  -0.000000   0.000000   0.000000
+   56  H  2 YY    0.000000   0.000000   0.000000   0.362331  -0.000000
+   57  H  2 ZZ    0.000000   0.000000  -0.000000  -0.362331   0.000000
+   58  H  2 XY    0.388522   0.010847   0.000000   0.000000   0.000000
+   59  H  2 XZ   -0.010847   0.388522   0.000000   0.000000   0.000000
+   60  H  2 YZ    0.000000   0.000000  -0.418383   0.000000  -0.433207
+   61  H  2 XXX   0.000000   0.000000   0.000000   0.000000   0.000000
+   62  H  2 YYY  -0.027641  -0.000772   0.000000   0.000000   0.000000
+   63  H  2 ZZZ   0.000772  -0.027641   0.000000   0.000000   0.000000
+   64  H  2 XXY   0.049446   0.001380   0.000000   0.000000   0.000000
+   65  H  2 XXZ  -0.001380   0.049446   0.000000   0.000000   0.000000
+   66  H  2 YYX   0.000000   0.000000   0.000000   0.009738   0.000000
+   67  H  2 YYZ   0.000345  -0.012362   0.000000   0.000000   0.000000
+   68  H  2 ZZX   0.000000   0.000000  -0.000000  -0.009738   0.000000
+   69  H  2 ZZY  -0.012362  -0.000345   0.000000   0.000000   0.000000
+   70  H  2 XYZ   0.000000   0.000000  -0.011244   0.000000   0.007787
+
+                     56         57         58         59         60
+                    7.8227     7.9147     8.0126     8.0126     8.6674
+                     A          A          A          A          A   
+    1  H  1  S    0.000000  -0.070810   0.000000   0.000000   0.257549
+    2  H  1  S   -0.000000   0.064411   0.000000   0.000000  -0.604628
+    3  H  1  S    0.000000   0.055051   0.000000   0.000000   0.707263
+    4  H  1  S    0.000000  -0.035124   0.000000   0.000000   0.016395
+    5  H  1  X    0.000000  -0.553728   0.000000   0.000000   0.064837
+    6  H  1  Y    0.000000   0.000000   0.000266  -0.146590   0.000000
+    7  H  1  Z    0.000000   0.000000  -0.146590  -0.000266   0.000000
+    8  H  1  X   -0.000000   0.593436   0.000000   0.000000  -0.275141
+    9  H  1  Y    0.000000   0.000000  -0.000343   0.188623   0.000000
+   10  H  1  Z    0.000000   0.000000   0.188623   0.000343   0.000000
+   11  H  1  X    0.000000  -0.208812   0.000000   0.000000   0.658690
+   12  H  1  Y    0.000000   0.000000   0.000248  -0.136507   0.000000
+   13  H  1  Z    0.000000   0.000000  -0.136507  -0.000248   0.000000
+   14  H  1 XX    0.000000   0.771327   0.000000   0.000000  -0.924867
+   15  H  1 YY   -0.751813  -0.385663   0.000000   0.000000   0.462434
+   16  H  1 ZZ    0.751813  -0.385663   0.000000   0.000000   0.462434
+   17  H  1 XY    0.000000   0.000000  -0.001598   0.879516   0.000000
+   18  H  1 XZ    0.000000   0.000000   0.879516   0.001598   0.000000
+   19  H  1 YZ    0.000000  -0.000000   0.000000   0.000000   0.000000
+   20  H  1 XX   -0.000000  -0.364013   0.000000   0.000000   0.784766
+   21  H  1 YY    0.375157   0.182006   0.000000   0.000000  -0.392383
+   22  H  1 ZZ   -0.375157   0.182006   0.000000   0.000000  -0.392383
+   23  H  1 XY    0.000000   0.000000   0.000903  -0.496748   0.000000
+   24  H  1 XZ    0.000000   0.000000  -0.496748  -0.000903   0.000000
+   25  H  1 YZ   -0.000000   0.000000   0.000000   0.000000   0.000000
+   26  H  1 XXX  -0.000000   0.021696   0.000000   0.000000   0.201902
+   27  H  1 YYY   0.000000   0.000000  -0.000073   0.040107   0.000000
+   28  H  1 ZZZ   0.000000   0.000000   0.040107   0.000073   0.000000
+   29  H  1 XXY   0.000000   0.000000   0.000130  -0.071745   0.000000
+   30  H  1 XXZ   0.000000   0.000000  -0.071745  -0.000130   0.000000
+   31  H  1 YYX   0.006744  -0.014554   0.000000   0.000000  -0.135440
+   32  H  1 YYZ   0.000000   0.000000   0.017936   0.000033   0.000000
+   33  H  1 ZZX  -0.006744  -0.014554   0.000000   0.000000  -0.135440
+   34  H  1 ZZY   0.000000   0.000000  -0.000033   0.017936   0.000000
+   35  H  1 XYZ   0.000000   0.000000   0.000000   0.000000   0.000000
+   36  H  2  S   -0.000000  -0.070811   0.000000   0.000000  -0.257547
+   37  H  2  S    0.000000   0.064412   0.000000   0.000000   0.604626
+   38  H  2  S   -0.000000   0.055051   0.000000   0.000000  -0.707260
+   39  H  2  S   -0.000000  -0.035123   0.000000   0.000000  -0.016396
+   40  H  2  X    0.000000   0.553728   0.000000   0.000000   0.064838
+   41  H  2  Y    0.000000   0.000000  -0.000266   0.146591   0.000000
+   42  H  2  Z    0.000000   0.000000   0.146591   0.000266   0.000000
+   43  H  2  X   -0.000000  -0.593435   0.000000   0.000000  -0.275141
+   44  H  2  Y    0.000000   0.000000   0.000343  -0.188623   0.000000
+   45  H  2  Z    0.000000   0.000000  -0.188623  -0.000343   0.000000
+   46  H  2  X    0.000000   0.208810   0.000000   0.000000   0.658690
+   47  H  2  Y    0.000000   0.000000  -0.000248   0.136507   0.000000
+   48  H  2  Z    0.000000   0.000000   0.136507   0.000248   0.000000
+   49  H  2 XX   -0.000000   0.771326   0.000000   0.000000   0.924868
+   50  H  2 YY    0.751837  -0.385663   0.000000   0.000000  -0.462434
+   51  H  2 ZZ   -0.751837  -0.385663   0.000000   0.000000  -0.462434
+   52  H  2 XY    0.000000   0.000000  -0.001598   0.879520   0.000000
+   53  H  2 XZ    0.000000   0.000000   0.879520   0.001598   0.000000
+   54  H  2 YZ   -0.000000  -0.000000   0.000000   0.000000   0.000000
+   55  H  2 XX    0.000000  -0.364011   0.000000   0.000000  -0.784767
+   56  H  2 YY   -0.375168   0.182006   0.000000   0.000000   0.392383
+   57  H  2 ZZ    0.375168   0.182006   0.000000   0.000000   0.392383
+   58  H  2 XY    0.000000   0.000000   0.000903  -0.496749   0.000000
+   59  H  2 XZ    0.000000   0.000000  -0.496749  -0.000903   0.000000
+   60  H  2 YZ    0.000000   0.000000   0.000000   0.000000   0.000000
+   61  H  2 XXX  -0.000000  -0.021696   0.000000   0.000000   0.201902
+   62  H  2 YYY   0.000000   0.000000   0.000073  -0.040107   0.000000
+   63  H  2 ZZZ   0.000000   0.000000  -0.040107  -0.000073   0.000000
+   64  H  2 XXY   0.000000   0.000000  -0.000130   0.071745   0.000000
+   65  H  2 XXZ   0.000000   0.000000   0.071745   0.000130   0.000000
+   66  H  2 YYX   0.006744   0.014554   0.000000   0.000000  -0.135440
+   67  H  2 YYZ   0.000000   0.000000  -0.017936  -0.000033   0.000000
+   68  H  2 ZZX  -0.006744   0.014554   0.000000   0.000000  -0.135440
+   69  H  2 ZZY   0.000000   0.000000   0.000033  -0.017936   0.000000
+   70  H  2 XYZ   0.000000   0.000000   0.000000   0.000000   0.000000
+ ...... END OF RHF CALCULATION ......
+ CPU     0: STEP CPU TIME=     1.94 TOTAL CPU TIME=          2.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.7 SECONDS, CPU UTILIZATION IS   282.63%
+
+     ---------------------------------------------------------------------
+     PROPERTIES FOR THE USELIBXC DFT FUNCTIONAL (RHF  TYPE) DENSITY MATRIX
+     ---------------------------------------------------------------------
+
+          -----------------
+          ENERGY COMPONENTS
+          -----------------
+
+         WAVEFUNCTION NORMALIZATION =       1.0000000000
+
+                ONE ELECTRON ENERGY =      -1.6303776283
+                TWO ELECTRON ENERGY =       0.3657322651
+           NUCLEAR REPULSION ENERGY =       0.2713729483
+                                      ------------------
+                       TOTAL ENERGY =      -0.9932724149
+
+ ELECTRON-ELECTRON POTENTIAL ENERGY =       0.3657322651
+  NUCLEUS-ELECTRON POTENTIAL ENERGY =      -2.3792012336
+   NUCLEUS-NUCLEUS POTENTIAL ENERGY =       0.2713729483
+                                      ------------------
+             TOTAL POTENTIAL ENERGY =      -1.7420960202
+               TOTAL KINETIC ENERGY =       0.7488236053
+                 VIRIAL RATIO (V/T) =       2.3264437817
+
+          ---------------------------------------
+          MULLIKEN AND LOWDIN POPULATION ANALYSES
+          ---------------------------------------
+
+     ATOMIC MULLIKEN POPULATION IN EACH MOLECULAR ORBITAL
+
+                      1
+
+                  2.000000
+
+    1             0.999993
+    2             1.000007
+
+               ----- POPULATIONS IN EACH AO -----
+                             MULLIKEN      LOWDIN
+              1  H  1  S      0.03720     0.04999
+              2  H  1  S      0.17634     0.09545
+              3  H  1  S      0.41529     0.21807
+              4  H  1  S      0.36397     0.32123
+              5  H  1  X      0.00004     0.00002
+              6  H  1  Y      0.00000     0.00000
+              7  H  1  Z      0.00000     0.00000
+              8  H  1  X     -0.00020     0.00052
+              9  H  1  Y      0.00000     0.00000
+             10  H  1  Z      0.00000     0.00000
+             11  H  1  X      0.00713     0.00941
+             12  H  1  Y      0.00000     0.00000
+             13  H  1  Z      0.00000     0.00000
+             14  H  1 XX     -0.00000     0.03320
+             15  H  1 YY     -0.00000     0.03193
+             16  H  1 ZZ      0.00000     0.03193
+             17  H  1 XY      0.00000     0.00000
+             18  H  1 XZ      0.00000     0.00000
+             19  H  1 YZ      0.00000     0.00000
+             20  H  1 XX      0.00006     0.07749
+             21  H  1 YY      0.00017     0.06505
+             22  H  1 ZZ      0.00000     0.06505
+             23  H  1 XY      0.00000     0.00000
+             24  H  1 XZ      0.00000     0.00000
+             25  H  1 YZ      0.00000     0.00000
+             26  H  1 XXX     0.00000     0.00035
+             27  H  1 YYY     0.00000     0.00000
+             28  H  1 ZZZ     0.00000     0.00000
+             29  H  1 XXY     0.00000     0.00000
+             30  H  1 XXZ     0.00000     0.00000
+             31  H  1 YYX     0.00000     0.00015
+             32  H  1 YYZ     0.00000     0.00000
+             33  H  1 ZZX     0.00000     0.00015
+             34  H  1 ZZY     0.00000     0.00000
+             35  H  1 XYZ     0.00000     0.00000
+             36  H  2  S      0.03720     0.04999
+             37  H  2  S      0.17633     0.09545
+             38  H  2  S      0.41530     0.21808
+             39  H  2  S      0.36398     0.32124
+             40  H  2  X      0.00004     0.00002
+             41  H  2  Y      0.00000     0.00000
+             42  H  2  Z      0.00000     0.00000
+             43  H  2  X     -0.00020     0.00052
+             44  H  2  Y      0.00000     0.00000
+             45  H  2  Z      0.00000     0.00000
+             46  H  2  X      0.00714     0.00941
+             47  H  2  Y      0.00000     0.00000
+             48  H  2  Z      0.00000     0.00000
+             49  H  2 XX     -0.00000     0.03320
+             50  H  2 YY     -0.00000     0.03193
+             51  H  2 ZZ      0.00000     0.03193
+             52  H  2 XY      0.00000     0.00000
+             53  H  2 XZ      0.00000     0.00000
+             54  H  2 YZ      0.00000     0.00000
+             55  H  2 XX      0.00006     0.07749
+             56  H  2 YY      0.00017     0.06505
+             57  H  2 ZZ      0.00000     0.06505
+             58  H  2 XY      0.00000     0.00000
+             59  H  2 XZ      0.00000     0.00000
+             60  H  2 YZ      0.00000     0.00000
+             61  H  2 XXX     0.00000     0.00035
+             62  H  2 YYY     0.00000     0.00000
+             63  H  2 ZZZ     0.00000     0.00000
+             64  H  2 XXY     0.00000     0.00000
+             65  H  2 XXZ     0.00000     0.00000
+             66  H  2 YYX     0.00000     0.00015
+             67  H  2 YYZ     0.00000     0.00000
+             68  H  2 ZZX     0.00000     0.00015
+             69  H  2 ZZY     0.00000     0.00000
+             70  H  2 XYZ     0.00000     0.00000
+
+          ----- MULLIKEN ATOMIC OVERLAP POPULATIONS -----
+          (OFF-DIAGONAL ELEMENTS NEED TO BE MULTIPLIED BY 2)
+
+             1           2
+
+    1    0.7822473
+    2    0.2177457   0.7822612
+
+          TOTAL MULLIKEN AND LOWDIN ATOMIC POPULATIONS
+       ATOM         MULL.POP.    CHARGE          LOW.POP.     CHARGE
+    1 H             0.999993    0.000007         0.999996    0.000004
+    2 H             1.000007   -0.000007         1.000004   -0.000004
+
+          MULLIKEN SPHERICAL HARMONIC POPULATIONS
+       ATOM           S       P       D      F      G      H      I    TOTAL
+    1 H             0.99    0.01    0.00   0.00   0.00   0.00   0.00    1.00
+    2 H             0.99    0.01    0.00   0.00   0.00   0.00   0.00    1.00
+
+          -------------------------------
+          BOND ORDER AND VALENCE ANALYSIS     BOND ORDER THRESHOLD=0.050
+          -------------------------------
+
+                   BOND                       BOND                       BOND
+  ATOM PAIR DIST  ORDER      ATOM PAIR DIST  ORDER      ATOM PAIR DIST  ORDER
+    1   2  1.950  1.000
+
+                       TOTAL       BONDED        FREE
+      ATOM            VALENCE     VALENCE     VALENCE
+    1 H                 1.000       1.000       0.000
+    2 H                 1.000       1.000       0.000
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (BOHR)    CHARGE
+                 1.842483    0.000000    0.000000        0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+    -0.000027    0.000000    0.000000    0.000027
+ ...... END OF PROPERTY EVALUATION ......
+ CPU     0: STEP CPU TIME=     0.04 TOTAL CPU TIME=          2.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.7 SECONDS, CPU UTILIZATION IS   282.95%
+                879438  WORDS OF DYNAMIC MEMORY USED
+ EXECUTION OF GAMESS TERMINATED NORMALLY 16:40:39 10-APR-2025    
+ DDI: 263640 bytes (0.3 MB / 0 MWords) used by master data server.
+
+ ----------------------------------------
+ CPU timing information for all processes
+ ========================================
+ 0: 2.37 + 0.315 = 2.353
+ 1: 2.61 + 0.366 = 2.428
+ 2: 2.109 + 0.260 = 2.370
+ 3: 2.52 + 0.320 = 2.372
+ 4: 2.31 + 0.335 = 2.366
+ 5: 2.125 + 0.247 = 2.373
+ 6: 0.556 + 0.365 = 0.922
+ 7: 0.521 + 0.461 = 0.982
+ 8: 0.540 + 0.425 = 0.965
+ 9: 0.588 + 0.388 = 0.976
+ 10: 0.528 + 0.436 = 0.965
+ 11: 0.579 + 0.403 = 0.983
+ ----------------------------------------
+unset echo
+----- accounting info -----
+Files used on the parent node Big-Chungus were:
+-rw-rw-r-- 1 jorge jorge     338 Apr 10 16:40 /home/jorge/dev/gamess/scratch/h2_r_1.95.F05
+-rw-rw-r-- 1 jorge jorge 6805760 Apr 10 16:40 /home/jorge/dev/gamess/scratch/h2_r_1.95.F10
+-rw-rw-r-- 1 jorge jorge      12 Apr 10 16:40 /home/jorge/dev/gamess/scratch/h2_r_1.95.nodes.mpd
+Thu Apr 10 04:40:39 PM CDT 2025
+15.9u 4.4s 0:01.68 1217.2% 0+0k 0+6408io 1255pf+0w
